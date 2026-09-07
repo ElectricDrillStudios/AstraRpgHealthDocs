@@ -62,6 +62,9 @@ The following image shows the inspector when Step mode is selected:
 > [!NOTE]
 > If **Step** mode is selected but no step is configured, the system falls back to **Final** damage. The inspector displays a warning to indicate this condition.
 
+> [!IMPORTANT]
+> **Step** mode reads the per-step damage trace, which is opt-in and **off by default in release builds** (see [Damage Step Trace](package-configuration.md#damage-step-trace)). If you ship step-based lifesteal in a release build, set **Damage Step Trace** to `Always` in `AstraHealthConfigSO`. Otherwise the trace is unavailable at runtime: a one-time console warning is logged and step-based lifesteal falls back to the **Final** damage amount. In the editor and development builds the trace is on by default, so Step mode works out of the box there.
+
 ## Lifesteal and Ownership
 
 By default, lifesteal credits the entity that literally dealt the damage — the damage performer. This is straightforward for most entities, but it breaks down once an entity is composed of several owned sub-entities. Consider a `Spaceship` entity (`EntityCore` + `EntityStats` for armor and speed and `EntityHealth` for HP) with a `Primary Weapon` child entity of its own (`EntityCore` + `EntityStats` for bullet damage and a lifesteal stat). When the weapon fires, the weapon — not the ship — is the damage performer, so a lifesteal stat configured on the ship would never trigger: the ship never dealt the damage, only its weapon did.

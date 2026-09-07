@@ -259,6 +259,23 @@ Applied by `ApplyPercentageDmgModifiersStep` when that step is included in the a
 > [!TIP]
 > **Floor** ensures defensive calculations never accidentally round up in the attacker's favour. **Ceil** guarantees that small offensive or heal amounts are never silently truncated to zero. **Round** (the default) provides neutral, balanced behaviour suitable for most games.
 
+#### Damage Step Trace
+**Type:** `DamageStepTracePolicy`  
+**Default:** `EditorAndDevelopmentBuilds`  
+**Required:** No  
+**Description:** Controls whether the damage calculation pipeline records its per-step amount trace (`DamageAmountContext.Records` — the before/after damage value at each pipeline step). Recording the trace costs one list allocation per damage instance, so it can be turned off where it is not needed.
+
+| Value | Behaviour |
+|---|---|
+| **Always** *(default)* | The trace is always recorded, including in release builds. |
+| **EditorAndDevelopmentBuilds** | The trace is recorded in the editor and in development builds, and skipped in release builds. |
+| **Never** | The trace is never recorded. |
+
+The trace is used for debugging and diagnostics, and by **Step**-mode lifesteal ([Amount Selector](lifesteal.md#amount-selector)), which samples the damage value at a chosen pipeline step. If you use step-based lifesteal in a release build, set this to **Always** — otherwise a one-time console warning is logged and step-based lifesteal falls back to the final damage amount. When the trace is disabled, `DamageAmountContext.Records` is empty.
+
+> [!WARNING]
+> If you defined custom code that inspects damage steps, you NEED to leave it turned ON with `Always`, or your game logic will break.
+
 ---
 
 ### Health Regeneration

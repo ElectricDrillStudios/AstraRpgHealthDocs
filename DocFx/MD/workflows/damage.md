@@ -404,6 +404,9 @@ var preDamageContext = PreDamageContext.Builder
         .Build();
 ```
 
+> [!TIP]
+> The fluent `Builder` is the ergonomic default and the right choice almost everywhere. On per-frame or very high-frequency damage paths — bullet-hell projectiles, damage-over-life ticks, large AoE loops — you can instead use `PreDamageContext.Create(...)`, which constructs the context directly without allocating the intermediate step-builder object. It takes the same values the builder does; prefer it only where profiling shows the builder allocations matter. **For most cases, the Builder approach is preferable.**
+
 
 ## Damage Modifiers
 
@@ -458,13 +461,13 @@ The pipeline uses a small set of dedicated types to keep concerns cleanly separa
 **`DamageAmountContext`** tracks the numerical amount throughout the pipeline:
 - **`InitialAmount`** — the original raw value; never modified after construction.
 - **`Current`** — the damage value as modified by each step; steps read and write this property.
-- **`Records`** — a read-only list of `StepAmountRecord` entries, each capturing the step type and the before/after `Current` values for that step. Useful for debugging and diagnostics.
+- **`Records`** — a read-only list of `StepAmountRecord` entries, each capturing the step type and the before/after `Current` values for that step. Useful for debugging and diagnostics. Recording this trace costs one list allocation per damage instance, so it is opt-in: it is controlled by the **Damage Step Trace** configuration field (on in the editor and development builds, off in release builds by default — see [Damage Step Trace](./package-configuration.md#damage-step-trace)). When the trace is disabled, `Records` is empty.
 
 **`DamageResolutionContext`** is the value returned by `TakeDamage`. It contains:
 - **`Outcome`** — `DamageOutcome.Applied` or `DamageOutcome.Prevented`.
 - **`Reasons`** — the accumulated `DamagePreventionReason` flags when prevented; `None` when applied.
 - **`TerminationStepType`** — the `Type` of the step that caused early termination, if any.
-- **`FinalDamageInfo`** — the `DamageInfo` at the end of the pipeline; may be `null` when damage was prevented in the pre-phase.
+- **`FinalDamageInfo`** — the `DamageInfo` at the end of the pipeline; may be `null` when damage was prevented before any `DamageInfo` is built. This is the case when `PreDamageContext.Ignore` was `true` and, since the latest release, also when the target was **already dead** at the time of the call: the already-dead short-circuit (`Outcome = Prevented`, `Reasons` includes `EntityDead`) now runs before a `DamageInfo` is allocated. Guard against a `null` `FinalDamageInfo` whenever you inspect a prevented outcome.
 - **`PreDamageContext`** — the original input that initiated this damage attempt.
 - **`IsReactable`** — propagated from `PreDamageContext.IsReactable`. When `false`, reactive systems listening to damage resolution events should not respond to this outcome.
 
@@ -484,7 +487,7 @@ The pipeline uses a small set of dedicated types to keep concerns cleanly separa
 | `PrePhaseIgnored` | `PreDamageContext.Ignore` was `true` before the pipeline started. |
 | `PrePhaseZeroAmount` | `PreDamageContext.Amount` was zero or negative. |
 | `PipelineReducedToZero` | A step reduced damage to zero without a more specific absorption reason. |
-| `EntityDead` | Target was already dead when `TakeDamage` was called. |
+| `EntityDead` | Target was already dead when `TakeDamage` was called. The call short-circuits before a `DamageInfo` is built, so `DamageResolutionContext.FinalDamageInfo` is `null` in this case. |
 
 > [!NOTE]
 > `DamagePreventionReason` is a flags enum: multiple values can be set simultaneously on the same damage attempt. Inspect `DamageResolutionContext.Reasons` to read all accumulated reasons after a call to `TakeDamage`.

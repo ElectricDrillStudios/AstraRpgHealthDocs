@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DealDamageGameActionSO&lt;TContext&gt; | Astra Health </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DealDamageGameActionSO&lt;TContext&gt; | Astra Health ">
+      
+      <meta name="description" content="Abstract base game action that inflicts configured damage on the entity carried by the incoming context. Works with any context implementing : the context entity is the damage target by default, while the dealer is resolved from the embedded  (None → system damage, any context role → self-inflicted damage from that same entity).  Unlike  — which reacts to a resolved damage event — this action is meant to be a deliberate, first-order damage application (e.g. a periodic tick, an on-death explosion, an ability payload). By default the produced  is reactable so downstream reactive systems can respond to it; disable  when the damage is itself a secondary effect that should not spawn further reactions.  This class implements  so it can be passed as the instigator of the damage it produces. Listeners can then check ctx.Instigator == thisActionSO to identify and filter self-triggered cycles.  When TContext also implements , the carried amount is forwarded to the config so  keeps working; otherwise that mode falls back to 0 with a warning.">
+      <link rel="icon" href="../images/astra-health-ico.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRPGHealth/new/main/apiSpec/new?filename=ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-health.svg" alt="Astra Health">
+            Astra Health
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1">
+
+
+
+  <h1 id="ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1" data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1" class="text-break">
+Class DealDamageGameActionSO&lt;TContext&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/GameActions/Actions/DealDamageGameActionSO.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraHealth.html">AstraHealth</a>.<a class="xref" href="ElectricDrill.AstraHealth.GameActions.html">GameActions</a>.<a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.html">Actions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>com.electricdrill.astra-health.Runtime.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Abstract base game action that inflicts configured damage on the entity carried by the
+incoming context. Works with any context implementing <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IHasEntity</span>: the
+context entity is the damage target by default, while the dealer is resolved from the
+embedded <a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContextConfig.html">PreDamageContextConfig</a> (<code>None</code> → system damage, any context
+role → self-inflicted damage from that same entity).</p>
+<p>
+Unlike <a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.CounterDamageGameActionSO-1.html">CounterDamageGameActionSO&lt;TContext&gt;</a> — which <em>reacts</em> to a resolved
+damage event — this action is meant to be a deliberate, first-order damage application (e.g.
+a periodic tick, an on-death explosion, an ability payload). By default the produced
+<a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContext.html">PreDamageContext</a> is reactable so downstream reactive systems can respond to it;
+disable <span class="xref">ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO&lt;TContext&gt;._isReactable</span> when the damage is itself a secondary effect that should not
+spawn further reactions.
+</p><p>
+This class implements <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator</span> so it can be passed as the instigator of
+the damage it produces. Listeners can then check <code>ctx.Instigator == thisActionSO</code> to
+identify and filter self-triggered cycles.
+</p><p>
+When <code class="typeparamref">TContext</code> also implements <a class="xref" href="ElectricDrill.AstraHealth.Damage.IHasAmount.html">IHasAmount</a>, the carried
+amount is forwarded to the config so <a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageAmountMode.html#ElectricDrill_AstraHealth_Damage_DamageAmountMode_DamageFromContext">DamageFromContext</a> keeps
+working; otherwise that mode falls back to <code>0</code> with a warning.
+</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DealDamageGameActionSO&lt;TContext&gt; : GameAction&lt;TContext&gt;, IExecutable&lt;TContext&gt;, ITaggable, IEffectInstigator where TContext : IHasEntity</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TContext</code></dt>
+    <dd><p>Context type implementing <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IHasEntity</span>.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+      <div><span class="xref">GameActionBase</span></div>
+      <div><span class="xref">GameAction</span>&lt;TContext&gt;</div>
+      <div><span class="xref">DealDamageGameActionSO&lt;TContext&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">IExecutable</span>&lt;TContext&gt;</div>
+      <div><span class="xref">ITaggable</span></div>
+      <div><span class="xref">IEffectInstigator</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO.html">DealDamageIHasEntityGameActionSO</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">GameAction&lt;TContext&gt;.Tags</span>
+    </div>
+    <div>
+      <span class="xref">GameAction&lt;TContext&gt;.DisplayName</span>
+    </div>
+    <div>
+      <a class="xref" href="https://electricdrill.github.io/AstraRpgFrameworkDocs/api/ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_ExecuteWithOwnerAsync__0_UnityEngine_MonoBehaviour_System_Threading_CancellationToken_">GameAction&lt;TContext&gt;.ExecuteWithOwnerAsync(TContext, MonoBehaviour, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">GameAction&lt;TContext&gt;.ExecuteAsyncForUnityEvent(TContext)</span>
+    </div>
+    <div>
+      <span class="xref">GameAction&lt;TContext&gt;.OnOperationCanceled()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://electricdrill.github.io/AstraRpgFrameworkDocs/api/ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_RunFireAndForget__0_UnityEngine_MonoBehaviour_">GameAction&lt;TContext&gt;.RunFireAndForget(TContext, MonoBehaviour)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ExecuteAsync_" data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ExecuteAsync*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ExecuteAsync__0_System_Threading_CancellationToken_" data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ExecuteAsync(`0,System.Threading.CancellationToken)">
+  ExecuteAsync(TContext, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/GameActions/Actions/DealDamageGameActionSO.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes the action asynchronously with the provided context.
+Override this method to implement your action logic.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Awaitable ExecuteAsync(TContext context, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <span class="xref">TContext</span></dt>
+    <dd><p>The context object containing information needed for execution.</p>
+</dd>
+    <dt><code>cancellationToken</code> <span class="xref">CancellationToken</span></dt>
+    <dd><p>Token to cancel the operation. MonoBehaviour owners can use their &quot;destroyCancellationToken&quot;
+to automatically cancel when destroyed.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/Awaitable.html">Awaitable</a></dt>
+    <dd><p>An Awaitable that completes when the action finishes.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveDealer_" data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveDealer*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveDealer__0_" data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveDealer(`0)">
+  ResolveDealer(TContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/GameActions/Actions/DealDamageGameActionSO.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resolves the entity attributed as the damage dealer. Returns <code>null</code> (system damage)
+when the config selects <a class="xref" href="ElectricDrill.AstraHealth.Damage.ContextDealerRole.html#ElectricDrill_AstraHealth_Damage_ContextDealerRole_None">None</a>; otherwise returns the context
+entity itself (self-inflicted damage).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual EntityCore ResolveDealer(TContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <span class="xref">TContext</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EntityCore</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveTarget_" data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveTarget*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveTarget__0_" data-uid="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveTarget(`0)">
+  ResolveTarget(TContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/GameActions/Actions/DealDamageGameActionSO.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resolves the entity that will receive the damage. Defaults to the context entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual EntityCore ResolveTarget(TContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <span class="xref">TContext</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EntityCore</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

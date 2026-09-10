@@ -168,7 +168,7 @@ package-internal helpers is a bug. The only legitimate write paths are:
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_Barrier" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.Barrier">
   Barrier
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L249"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the current barrier points (temporary HP) of the entity.</p>
@@ -200,7 +200,7 @@ package-internal helpers is a bug. The only legitimate write paths are:
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_BaseMaxHp" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.BaseMaxHp">
   BaseMaxHp
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L375"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L393"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The constant base max HP, before flat/percentage/scaling modifiers. Setting it overwrites the
@@ -399,7 +399,7 @@ the primary affected subject (e.g. the event target).</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_HealthCanBeNegative" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.HealthCanBeNegative">
   HealthCanBeNegative
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L271"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L294"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets whether the entity's health can go below zero.
@@ -432,15 +432,15 @@ When set to true, a death threshold must be defined.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_Hp" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.Hp">
   Hp
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L237"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the current health points of the entity.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the current health points of the entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long Hp { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long Hp { get; set; }</code></pre>
   </div>
 
 
@@ -456,6 +456,22 @@ When set to true, a death threshold must be defined.</p>
 
 
 
+  <h4 class="section" id="ElectricDrill_AstraHealth_Core_EntityHealth_Hp_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+The setter is a raw assignment: it raises no health, damage or resurrection event, applies no
+modifier, and does not touch <a class="xref" href="ElectricDrill.AstraHealth.Core.EntityHealth.html#ElectricDrill_AstraHealth_Core_EntityHealth_Barrier">Barrier</a>. It exists for restoring an entity's state
+wholesale — chiefly recycling a pooled entity into a new life — where every one of those
+side effects would be wrong. Ordinary gameplay changes health through <code>Heal</code>,
+<code>TakeDamage</code> and <code>Resurrect</code>, which do all of the above on purpose.
+</p>
+<p>
+Assigning on a dead entity is legal and is the point: <code>_isDead</code> is recomputed from HP in
+<code>OnEnable</code>, so a dead entity restored to full HP while deactivated comes back alive on
+its next activation. <code>Resurrect</code> would instead route through <code>Heal</code> — applying
+healing modifiers, raising the resurrection channel and allocating contexts — none of which a
+recycled entity wants.
+</p>
+</div>
 
 
 
@@ -464,7 +480,7 @@ When set to true, a death threshold must be defined.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_IsImmune" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.IsImmune">
   IsImmune
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L306"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets whether the entity is immune to all damage.</p>
@@ -528,7 +544,7 @@ When set to true, a death threshold must be defined.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_OverrideOnDeathGameAction" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.OverrideOnDeathGameAction">
   OverrideOnDeathGameAction
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L258"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L281"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the override <span class="xref">ElectricDrill.AstraRpgFramework.GameActions.GameAction&lt;TContext&gt;</span> for handling entity death.
@@ -562,7 +578,7 @@ If null, the default game action from the <a class="xref" href="ElectricDrill.As
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_OverrideOnResurrectionGameAction" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.OverrideOnResurrectionGameAction">
   OverrideOnResurrectionGameAction
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L288"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the override <span class="xref">ElectricDrill.AstraRpgFramework.GameActions.GameAction&lt;TContext&gt;</span> for handling entity resurrection.
@@ -600,7 +616,7 @@ If null, the default game action from the <a class="xref" href="ElectricDrill.As
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_AddBarrier_System_Int64_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.AddBarrier(System.Int64)">
   AddBarrier(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L541"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L560"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified amount to the entity's barrier pool.</p>
@@ -633,7 +649,7 @@ If null, the default game action from the <a class="xref" href="ElectricDrill.As
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_AddMaxHpFlatModifier_System_Int64_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpIncrease_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpDecrease_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.AddMaxHpFlatModifier(System.Int64,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpIncrease,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpDecrease)">
   AddMaxHpFlatModifier(long, HpBehaviourOnMaxHpIncrease, HpBehaviourOnMaxHpDecrease)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L363"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L381"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a flat modifier to the entity's maximum health.</p>
@@ -672,7 +688,7 @@ If null, the default game action from the <a class="xref" href="ElectricDrill.As
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_AddMaxHpPercentageModifier_ElectricDrill_AstraRpgFramework_Utils_Percentage_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpIncrease_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpDecrease_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.AddMaxHpPercentageModifier(ElectricDrill.AstraRpgFramework.Utils.Percentage,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpIncrease,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpDecrease)">
   AddMaxHpPercentageModifier(Percentage, HpBehaviourOnMaxHpIncrease, HpBehaviourOnMaxHpDecrease)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L391"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L409"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a percentage modifier to the entity's maximum health.</p>
@@ -711,7 +727,7 @@ If null, the default game action from the <a class="xref" href="ElectricDrill.As
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_AddMaxHpScaling_ElectricDrill_AstraRpgFramework_Scaling_ScalingComponents_StatsScalingComponentSO_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpIncrease_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpDecrease_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.AddMaxHpScaling(ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatsScalingComponentSO,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpIncrease,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpDecrease)">
   AddMaxHpScaling(StatsScalingComponentSO, HpBehaviourOnMaxHpIncrease, HpBehaviourOnMaxHpDecrease)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L402"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L420"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a stats-based scaling component that dynamically affects maximum health.
@@ -751,7 +767,7 @@ Subscribes to stat changes if this is the first scaling added.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_ClearMaxHpScalings_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpIncrease_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpDecrease_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.ClearMaxHpScalings(ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpIncrease,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpDecrease)">
   ClearMaxHpScalings(HpBehaviourOnMaxHpIncrease, HpBehaviourOnMaxHpDecrease)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L420"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L438"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes all stats-based scaling components from maximum health calculations.</p>
@@ -785,7 +801,7 @@ Subscribes to stat changes if this is the first scaling added.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_GetHpPortion_System_Double_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.GetHpPortion(System.Double)">
   GetHpPortion(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L240"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L263"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the amount of current HP represented by the given portion.</p>
@@ -823,7 +839,7 @@ Subscribes to stat changes if this is the first scaling added.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_GetMaxHpPortion_System_Double_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.GetMaxHpPortion(System.Double)">
   GetMaxHpPortion(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L255"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the amount of max HP represented by the given portion.</p>
@@ -861,7 +877,7 @@ Subscribes to stat changes if this is the first scaling added.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_GetMissingHpPortion_System_Double_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.GetMissingHpPortion(System.Double)">
   GetMissingHpPortion(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L271"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the amount of missing HP represented by the given portion.</p>
@@ -899,7 +915,7 @@ Subscribes to stat changes if this is the first scaling added.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_Heal_ElectricDrill_AstraHealth_Heal_PreHealContext_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.Heal(ElectricDrill.AstraHealth.Heal.PreHealContext)">
   Heal(PreHealContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L657"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L679"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Heals the entity by the specified amount, applying critical multipliers and heal modifiers.
@@ -948,7 +964,7 @@ Throws DeadEntityException if the entity is dead.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_Heal_ElectricDrill_AstraHealth_Heal_PreHealContext_System_Boolean_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.Heal(ElectricDrill.AstraHealth.Heal.PreHealContext,System.Boolean)">
   Heal(PreHealContext, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L691"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L713"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Heals the entity by the specified amount, applying critical multipliers and heal modifiers.
@@ -1011,7 +1027,7 @@ HP-change channels are always raised.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_IsAlive" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.IsAlive">
   IsAlive()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L791"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L813"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Checks if the entity's current health is above the death threshold.</p>
@@ -1044,7 +1060,7 @@ HP-change channels are always raised.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_IsDead" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.IsDead">
   IsDead()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L783"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L805"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Checks if the entity's current health is at or below the death threshold.
@@ -1078,7 +1094,7 @@ Returns the cached death state for performance.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_ManualHealthRegenerationTick" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.ManualHealthRegenerationTick">
   ManualHealthRegenerationTick()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L335"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L358"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Method to be called to trigger manual health regeneration (e.g., if you are using a turn-based system, call this
@@ -1106,7 +1122,7 @@ method at the start/end of each turn).</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_RemoveBarrier_System_Int64_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.RemoveBarrier(System.Int64)">
   RemoveBarrier(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L546"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L565"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes the specified amount from the entity's barrier pool, flooring at zero.</p>
@@ -1139,7 +1155,7 @@ method at the start/end of each turn).</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_RemoveMaxHpScaling_ElectricDrill_AstraRpgFramework_Scaling_ScalingComponents_StatsScalingComponentSO_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpIncrease_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpDecrease_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.RemoveMaxHpScaling(ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatsScalingComponentSO,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpIncrease,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpDecrease)">
   RemoveMaxHpScaling(StatsScalingComponentSO, HpBehaviourOnMaxHpIncrease, HpBehaviourOnMaxHpDecrease)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L413"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L431"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes a previously added stats-based scaling component from maximum health calculations.
@@ -1179,7 +1195,7 @@ Unsubscribes from stat changes if no scalings remain.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_Resurrect_ElectricDrill_AstraHealth_Heal_PreHealContext_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.Resurrect(ElectricDrill.AstraHealth.Heal.PreHealContext)">
   Resurrect(PreHealContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L806"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L828"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resurrects the entity using the provided <a class="xref" href="ElectricDrill.AstraHealth.Heal.PreHealContext.html">PreHealContext</a>, routing through <a class="xref" href="ElectricDrill.AstraHealth.Core.EntityHealth.html#ElectricDrill_AstraHealth_Core_EntityHealth_Heal_ElectricDrill_AstraHealth_Heal_PreHealContext_">Heal(PreHealContext)</a>
@@ -1224,7 +1240,7 @@ Throws <span class="xref">System.InvalidOperationException</span> if the entity 
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_Resurrect_ElectricDrill_AstraRpgFramework_Utils_Percentage_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.Resurrect(ElectricDrill.AstraRpgFramework.Utils.Percentage)">
   Resurrect(Percentage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L886"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L903"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Convenience overload. Resurrects the entity with a percentage of its maximum HP.
@@ -1268,7 +1284,7 @@ Expected range is [0, 100] (i.e. 0% to 100%). Values outside this range trigger 
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_Resurrect_System_Int64_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.Resurrect(System.Int64)">
   Resurrect(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L864"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L886"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Convenience overload. Resurrects the entity with a base amount of HP.
@@ -1310,7 +1326,7 @@ Throws <span class="xref">System.InvalidOperationException</span> if the entity 
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_SetHpToMax" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.SetHpToMax">
   SetHpToMax()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L556"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L575"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the entity's current health to its maximum health value.
@@ -1344,7 +1360,7 @@ Throws DeadEntityException if the entity is dead.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_SetupMaxHp_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpIncrease_ElectricDrill_AstraHealth_Core_EntityHealth_HpBehaviourOnMaxHpDecrease_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.SetupMaxHp(ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpIncrease,ElectricDrill.AstraHealth.Core.EntityHealth.HpBehaviourOnMaxHpDecrease)">
   SetupMaxHp(HpBehaviourOnMaxHpIncrease, HpBehaviourOnMaxHpDecrease)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L353"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L371"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Recalculates and updates the entity's maximum health based on base value, modifiers, and scaling.
@@ -1425,7 +1441,7 @@ If the entity is dead, only recalculates max HP and raises events without adjust
 
   <h3 id="ElectricDrill_AstraHealth_Core_EntityHealth_TakeDamage_ElectricDrill_AstraHealth_Damage_PreDamageContext_" data-uid="ElectricDrill.AstraHealth.Core.EntityHealth.TakeDamage(ElectricDrill.AstraHealth.Damage.PreDamageContext)">
   TakeDamage(PreDamageContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L492"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Core/EntityHealth.cs/#L510"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies damage to the entity through the damage calculation pipeline. This is the primary method for dealing

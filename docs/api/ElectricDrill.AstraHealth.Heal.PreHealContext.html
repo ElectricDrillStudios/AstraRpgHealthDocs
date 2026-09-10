@@ -506,6 +506,75 @@ such as a passive that heals in response to another heal or damage event.</p>
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ElectricDrill_AstraHealth_Heal_PreHealContext_Create_" data-uid="ElectricDrill.AstraHealth.Heal.PreHealContext.Create*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_Heal_PreHealContext_Create_System_Int64_ElectricDrill_AstraHealth_Heal_HealSourceSO_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_System_Boolean_System_Double_ElectricDrill_AstraRpgFramework_Contexts_IEffectInstigator_System_Boolean_System_Boolean_" data-uid="ElectricDrill.AstraHealth.Heal.PreHealContext.Create(System.Int64,ElectricDrill.AstraHealth.Heal.HealSourceSO,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Boolean,System.Double,ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator,System.Boolean,System.Boolean)">
+  Create(long, HealSourceSO, EntityCore, EntityCore, bool, double, IEffectInstigator, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Heal/PreHealContext.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allocation-free alternative to <a class="xref" href="ElectricDrill.AstraHealth.Heal.PreHealContext.html#ElectricDrill_AstraHealth_Heal_PreHealContext_Builder">Builder</a>: constructs a <a class="xref" href="ElectricDrill.AstraHealth.Heal.PreHealContext.html">PreHealContext</a>
+directly, without the intermediate step-builder object. The fluent <a class="xref" href="ElectricDrill.AstraHealth.Heal.PreHealContext.html#ElectricDrill_AstraHealth_Heal_PreHealContext_Builder">Builder</a> stays
+the ergonomic default; prefer this overload on high-frequency heal paths (passive regeneration,
+lifesteal). Critical multiplier &lt;= 0 is normalized to 1.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PreHealContext Create(long amount, HealSourceSO healSource, EntityCore target, EntityCore performer = null, bool isCritical = false, double criticalMultiplier = 1, IEffectInstigator instigator = null, bool isReactable = true, bool ignore = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <span class="xref">long</span></dt>
+    <dd><p>Base heal amount, before modifiers.</p>
+</dd>
+    <dt><code>healSource</code> <a class="xref" href="ElectricDrill.AstraHealth.Heal.HealSourceSO.html">HealSourceSO</a></dt>
+    <dd><p>Heal source category.</p>
+</dd>
+    <dt><code>target</code> <span class="xref">EntityCore</span></dt>
+    <dd><p>Entity receiving the heal.</p>
+</dd>
+    <dt><code>performer</code> <span class="xref">EntityCore</span></dt>
+    <dd><p>Entity that performed the heal. Pass <code>null</code> for system-initiated heals.</p>
+</dd>
+    <dt><code>isCritical</code> <span class="xref">bool</span></dt>
+    <dd><p>Whether the heal is flagged as critical.</p>
+</dd>
+    <dt><code>criticalMultiplier</code> <span class="xref">double</span></dt>
+    <dd><p>Multiplier applied when critical (1.0 means no change).</p>
+</dd>
+    <dt><code>instigator</code> <span class="xref">IEffectInstigator</span></dt>
+    <dd><p>Specific cause of the heal (ability, modifier, passive). May be <code>null</code>.</p>
+</dd>
+    <dt><code>isReactable</code> <span class="xref">bool</span></dt>
+    <dd><p>When <code>false</code>, reactive systems skip this event (use for secondary effects).</p>
+</dd>
+    <dt><code>ignore</code> <span class="xref">bool</span></dt>
+    <dd><p>Initial value of <a class="xref" href="ElectricDrill.AstraHealth.Heal.PreHealContext.html#ElectricDrill_AstraHealth_Heal_PreHealContext_Ignore">Ignore</a>. Listeners may still mutate it after dispatch.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraHealth.Heal.PreHealContext.html">PreHealContext</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 

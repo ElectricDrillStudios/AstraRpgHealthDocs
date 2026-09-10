@@ -546,6 +546,78 @@ the damage into a different type before the pipeline runs.</p>
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ElectricDrill_AstraHealth_Damage_PreDamageContext_Create_" data-uid="ElectricDrill.AstraHealth.Damage.PreDamageContext.Create*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_Damage_PreDamageContext_Create_System_Int64_ElectricDrill_AstraHealth_Damage_DamageTypeSO_ElectricDrill_AstraHealth_Damage_DamageSourceSO_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_System_Boolean_System_Double_ElectricDrill_AstraRpgFramework_Contexts_IEffectInstigator_System_Boolean_System_Boolean_" data-uid="ElectricDrill.AstraHealth.Damage.PreDamageContext.Create(System.Int64,ElectricDrill.AstraHealth.Damage.DamageTypeSO,ElectricDrill.AstraHealth.Damage.DamageSourceSO,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Boolean,System.Double,ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator,System.Boolean,System.Boolean)">
+  Create(long, DamageTypeSO, DamageSourceSO, EntityCore, EntityCore, bool, double, IEffectInstigator, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/PreDamageContext.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allocation-free alternative to <a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContext.html#ElectricDrill_AstraHealth_Damage_PreDamageContext_Builder">Builder</a>: constructs a <a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContext.html">PreDamageContext</a>
+directly, without the intermediate step-builder object. The fluent <a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContext.html#ElectricDrill_AstraHealth_Damage_PreDamageContext_Builder">Builder</a> stays
+the ergonomic default; prefer this overload on per-frame / high-frequency damage paths.
+Critical multiplier &lt;= 0 is normalized to 1.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PreDamageContext Create(long amount, DamageTypeSO type, DamageSourceSO damageSource, EntityCore target, EntityCore performer = null, bool isCritical = false, double criticalMultiplier = 1, IEffectInstigator instigator = null, bool isReactable = true, bool ignore = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <span class="xref">long</span></dt>
+    <dd><p>Raw damage amount, before modifiers.</p>
+</dd>
+    <dt><code>type</code> <a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageTypeSO.html">DamageTypeSO</a></dt>
+    <dd><p>Damage type/category.</p>
+</dd>
+    <dt><code>damageSource</code> <a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageSourceSO.html">DamageSourceSO</a></dt>
+    <dd><p>Damage source category.</p>
+</dd>
+    <dt><code>target</code> <span class="xref">EntityCore</span></dt>
+    <dd><p>Entity that will receive the damage.</p>
+</dd>
+    <dt><code>performer</code> <span class="xref">EntityCore</span></dt>
+    <dd><p>Entity dealing the damage. Pass <code>null</code> for environmental/system damage.</p>
+</dd>
+    <dt><code>isCritical</code> <span class="xref">bool</span></dt>
+    <dd><p>Whether the hit is flagged as critical.</p>
+</dd>
+    <dt><code>criticalMultiplier</code> <span class="xref">double</span></dt>
+    <dd><p>Multiplier applied when critical (1.0 means no change).</p>
+</dd>
+    <dt><code>instigator</code> <span class="xref">IEffectInstigator</span></dt>
+    <dd><p>Specific cause of the damage (ability, modifier, passive). May be <code>null</code>.</p>
+</dd>
+    <dt><code>isReactable</code> <span class="xref">bool</span></dt>
+    <dd><p>When <code>false</code>, reactive systems skip this event (use for secondary effects).</p>
+</dd>
+    <dt><code>ignore</code> <span class="xref">bool</span></dt>
+    <dd><p>Initial value of <a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContext.html#ElectricDrill_AstraHealth_Damage_PreDamageContext_Ignore">Ignore</a>. Listeners may still mutate it after dispatch.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContext.html">PreDamageContext</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 

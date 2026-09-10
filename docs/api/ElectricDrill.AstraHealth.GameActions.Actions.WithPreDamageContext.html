@@ -96,9 +96,14 @@ Classes
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.WithPreDamageContext.CompositePreDamageContextGameActionSO.html">CompositePreDamageContextGameActionSO</a></dt>
-      <dd><p>Executes a list of actions in sequence.
-Useful for chaining multiple behaviors (e.g., play sound, wait, disable object).
-Will gracefully terminate if the context is destroyed or cancellation is requested.</p>
+      <dd><p>Executes a list of actions. Two authoring models are supported:</p>
+<ul><li><b>Steps</b> (<span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction&lt;TContext&gt;._steps</span>) — each <span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeStep&lt;TContext&gt;</span> chooses
+    how it composes with its neighbours (await it, run it alongside the following steps, or
+    fire it and forget it) and may carry a delay. This is the model new assets should use.
+  </li><li><b>Legacy list</b> (<span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction&lt;TContext&gt;._actions</span>) — a plain sequential list. Kept so assets
+    authored before steps existed keep deserializing and running unchanged.
+  </li></ul>
+Will gracefully terminate if the context is destroyed or cancellation is requested.
 </dd>
     </dl>
     <dl class="jumplist">

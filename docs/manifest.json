@@ -1425,6 +1425,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraHealth.GameActions.Actions.ResurrectEntityGameActionSO-1.yml",
       "output": {
         ".html": {
@@ -1489,6 +1499,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraHealth.GameActions.Actions.WithEntityDiedContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO.html"
         }
       },
       "version": ""

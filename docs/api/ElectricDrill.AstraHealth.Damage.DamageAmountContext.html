@@ -140,7 +140,7 @@ is transformed into the final damage applied.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Damage_DamageAmountContext__ctor_System_Int64_" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.#ctor(System.Int64)">
   DamageAmountContext(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L169"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageAmountContext.html">DamageAmountContext</a> with the provided initial value.</p>
@@ -177,7 +177,7 @@ is transformed into the final damage applied.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Damage_DamageAmountContext_Current" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.Current">
   Current
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L145"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The current damage value during calculation; updated by the various phases.
@@ -212,7 +212,7 @@ to aid debugging.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Damage_DamageAmountContext_InitialAmount" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.InitialAmount">
   InitialAmount
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The raw initial value provided to the damage calculation pipeline.</p>
@@ -244,10 +244,11 @@ to aid debugging.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Damage_DamageAmountContext_Records" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.Records">
   Records
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L83"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Read-only list of the recorded phase entries in order.</p>
+  <div class="markdown level1 summary"><p>Read-only list of the recorded phase entries in order. Empty when the step trace is
+disabled (<a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageAmountContext.html#ElectricDrill_AstraHealth_Damage_DamageAmountContext_StepTraceEnabled">StepTraceEnabled</a>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -272,6 +273,41 @@ to aid debugging.</p>
 
 
 
+  <a id="ElectricDrill_AstraHealth_Damage_DamageAmountContext_StepTraceEnabled_" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_Damage_DamageAmountContext_StepTraceEnabled" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled">
+  StepTraceEnabled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the damage calculation pipeline appends per-step records to <a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageAmountContext.html#ElectricDrill_AstraHealth_Damage_DamageAmountContext_Records">Records</a>
+for this instance. Set from <a class="xref" href="ElectricDrill.AstraHealth.Config.IAstraHealthConfig.html#ElectricDrill_AstraHealth_Config_IAstraHealthConfig_RecordDamageStepTrace">RecordDamageStepTrace</a>
+by <a class="xref" href="ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageInfo.html">DamageInfo</a>; defaults to <code>true</code> for directly
+constructed instances (e.g. unit tests).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool StepTraceEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -280,7 +316,7 @@ to aid debugging.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Damage_DamageAmountContext_FromRaw_System_Int64_" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.FromRaw(System.Int64)">
   FromRaw(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L180"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Convenience factory that builds a <a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageAmountContext.html">DamageAmountContext</a> from a raw value; equivalent to using the public constructor.</p>
@@ -319,7 +355,7 @@ to aid debugging.</p>
 
   <h3 id="ElectricDrill_AstraHealth_Damage_DamageAmountContext_GetStepAmount_System_Type_" data-uid="ElectricDrill.AstraHealth.Damage.DamageAmountContext.GetStepAmount(System.Type)">
   GetStepAmount(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/Damage/DamageAmountContext.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves the record associated with a given phase identified by its type.</p>

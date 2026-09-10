@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CompositePreDamageContextGameActionSO | Astra Health ">
       
-      <meta name="description" content="Executes a list of actions in sequence. Useful for chaining multiple behaviors (e.g., play sound, wait, disable object). Will gracefully terminate if the context is destroyed or cancellation is requested.">
+      <meta name="description" content="Executes a list of actions. Two authoring models are supported: Steps () — each  chooses     how it composes with its neighbours (await it, run it alongside the following steps, or     fire it and forget it) and may carry a delay. This is the model new assets should use.   Legacy list () — a plain sequential list. Kept so assets     authored before steps existed keep deserializing and running unchanged.    Will gracefully terminate if the context is destroyed or cancellation is requested.">
       <link rel="icon" href="../images/astra-health-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,9 +97,14 @@ Class CompositePreDamageContextGameActionSO  <a class="header-action link-second
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-health.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Executes a list of actions in sequence.
-Useful for chaining multiple behaviors (e.g., play sound, wait, disable object).
-Will gracefully terminate if the context is destroyed or cancellation is requested.</p>
+  <div class="markdown summary"><p>Executes a list of actions. Two authoring models are supported:</p>
+<ul><li><b>Steps</b> (<span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction&lt;TContext&gt;._steps</span>) — each <span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeStep&lt;TContext&gt;</span> chooses
+    how it composes with its neighbours (await it, run it alongside the following steps, or
+    fire it and forget it) and may carry a delay. This is the model new assets should use.
+  </li><li><b>Legacy list</b> (<span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction&lt;TContext&gt;._actions</span>) — a plain sequential list. Kept so assets
+    authored before steps existed keep deserializing and running unchanged.
+  </li></ul>
+Will gracefully terminate if the context is destroyed or cancellation is requested.
 </div>
   <div class="markdown conceptual"></div>
 
@@ -159,6 +164,12 @@ public sealed class CompositePreDamageContextGameActionSO : CompositeGameAction&
 
 
 
+  <h2 id="ElectricDrill_AstraHealth_GameActions_Actions_WithPreDamageContext_CompositePreDamageContextGameActionSO_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p><b>Precedence.</b> If <span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction&lt;TContext&gt;._actions</span> is non-empty the legacy path runs and
+<span class="xref">ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction&lt;TContext&gt;._steps</span> is ignored (with a one-shot warning if both are populated). The inspector
+prevents reaching that ambiguous state, so the warning is a safety net rather than a normal
+flow. Otherwise the step path runs.</p>
+</div>
 
 
 

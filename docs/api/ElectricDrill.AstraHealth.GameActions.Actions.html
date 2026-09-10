@@ -108,6 +108,31 @@ of the counter-damage it produces. Listeners can then check
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html">DealDamageGameActionSO&lt;TContext&gt;</a></dt>
+      <dd><p>Abstract base game action that inflicts configured damage on the entity carried by the
+incoming context. Works with any context implementing <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IHasEntity</span>: the
+context entity is the damage target by default, while the dealer is resolved from the
+embedded <a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContextConfig.html">PreDamageContextConfig</a> (<code>None</code> → system damage, any context
+role → self-inflicted damage from that same entity).</p>
+<p>
+Unlike <a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.CounterDamageGameActionSO-1.html">CounterDamageGameActionSO&lt;TContext&gt;</a> — which <em>reacts</em> to a resolved
+damage event — this action is meant to be a deliberate, first-order damage application (e.g.
+a periodic tick, an on-death explosion, an ability payload). By default the produced
+<a class="xref" href="ElectricDrill.AstraHealth.Damage.PreDamageContext.html">PreDamageContext</a> is reactable so downstream reactive systems can respond to it;
+disable <span class="xref">ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO&lt;TContext&gt;._isReactable</span> when the damage is itself a secondary effect that should not
+spawn further reactions.
+</p><p>
+This class implements <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator</span> so it can be passed as the instigator of
+the damage it produces. Listeners can then check <code>ctx.Instigator == thisActionSO</code> to
+identify and filter self-triggered cycles.
+</p><p>
+When <code class="typeparamref">TContext</code> also implements <a class="xref" href="ElectricDrill.AstraHealth.Damage.IHasAmount.html">IHasAmount</a>, the carried
+amount is forwarded to the config so <a class="xref" href="ElectricDrill.AstraHealth.Damage.DamageAmountMode.html#ElectricDrill_AstraHealth_Damage_DamageAmountMode_DamageFromContext">DamageFromContext</a> keeps
+working; otherwise that mode falls back to <code>0</code> with a warning.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.ResurrectEntityGameActionSO-1.html">ResurrectEntityGameActionSO&lt;TContext&gt;</a></dt>
       <dd><p>Base generic game action for resurrecting entities with EntityHealth components.
 Can be configured to resurrect with either a percentage of max HP or a flat HP amount.

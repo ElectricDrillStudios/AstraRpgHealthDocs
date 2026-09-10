@@ -917,6 +917,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.PassiveHealthRegenerationStat
   nameWithType: AstraHealthConfigSO.PassiveHealthRegenerationStat
+- uid: ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.RecordDamageStepTrace
+  name: RecordDamageStepTrace
+  href: api/ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.html#ElectricDrill_AstraHealth_Config_AstraHealthConfigSO_RecordDamageStepTrace
+  commentId: P:ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.RecordDamageStepTrace
+  fullName: ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.RecordDamageStepTrace
+  nameWithType: AstraHealthConfigSO.RecordDamageStepTrace
+- uid: ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.RecordDamageStepTrace*
+  name: RecordDamageStepTrace
+  href: api/ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.html#ElectricDrill_AstraHealth_Config_AstraHealthConfigSO_RecordDamageStepTrace_
+  commentId: Overload:ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.RecordDamageStepTrace
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.RecordDamageStepTrace
+  nameWithType: AstraHealthConfigSO.RecordDamageStepTrace
 - uid: ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.RoundingSettings
   name: RoundingSettings
   href: api/ElectricDrill.AstraHealth.Config.AstraHealthConfigSO.html#ElectricDrill_AstraHealth_Config_AstraHealthConfigSO_RoundingSettings
@@ -1505,6 +1518,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.Config.IAstraHealthConfig.PassiveHealthRegenerationStat
   nameWithType: IAstraHealthConfig.PassiveHealthRegenerationStat
+- uid: ElectricDrill.AstraHealth.Config.IAstraHealthConfig.RecordDamageStepTrace
+  name: RecordDamageStepTrace
+  href: api/ElectricDrill.AstraHealth.Config.IAstraHealthConfig.html#ElectricDrill_AstraHealth_Config_IAstraHealthConfig_RecordDamageStepTrace
+  commentId: P:ElectricDrill.AstraHealth.Config.IAstraHealthConfig.RecordDamageStepTrace
+  fullName: ElectricDrill.AstraHealth.Config.IAstraHealthConfig.RecordDamageStepTrace
+  nameWithType: IAstraHealthConfig.RecordDamageStepTrace
+- uid: ElectricDrill.AstraHealth.Config.IAstraHealthConfig.RecordDamageStepTrace*
+  name: RecordDamageStepTrace
+  href: api/ElectricDrill.AstraHealth.Config.IAstraHealthConfig.html#ElectricDrill_AstraHealth_Config_IAstraHealthConfig_RecordDamageStepTrace_
+  commentId: Overload:ElectricDrill.AstraHealth.Config.IAstraHealthConfig.RecordDamageStepTrace
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.Config.IAstraHealthConfig.RecordDamageStepTrace
+  nameWithType: IAstraHealthConfig.RecordDamageStepTrace
 - uid: ElectricDrill.AstraHealth.Config.IAstraHealthConfig.RoundingSettings
   name: RoundingSettings
   href: api/ElectricDrill.AstraHealth.Config.IAstraHealthConfig.html#ElectricDrill_AstraHealth_Config_IAstraHealthConfig_RoundingSettings
@@ -3117,6 +3143,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepAmountRecord.ToString
   nameWithType: DamageAmountContext.StepAmountRecord.ToString
+- uid: ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled
+  name: StepTraceEnabled
+  href: api/ElectricDrill.AstraHealth.Damage.DamageAmountContext.html#ElectricDrill_AstraHealth_Damage_DamageAmountContext_StepTraceEnabled
+  commentId: P:ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled
+  fullName: ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled
+  nameWithType: DamageAmountContext.StepTraceEnabled
+- uid: ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled*
+  name: StepTraceEnabled
+  href: api/ElectricDrill.AstraHealth.Damage.DamageAmountContext.html#ElectricDrill_AstraHealth_Damage_DamageAmountContext_StepTraceEnabled_
+  commentId: Overload:ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.Damage.DamageAmountContext.StepTraceEnabled
+  nameWithType: DamageAmountContext.StepTraceEnabled
 - uid: ElectricDrill.AstraHealth.Damage.DamageAmountMode
   name: DamageAmountMode
   href: api/ElectricDrill.AstraHealth.Damage.DamageAmountMode.html
@@ -3715,6 +3754,22 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.Damage.PreDamageContext.Builder
   nameWithType: PreDamageContext.Builder
+- uid: ElectricDrill.AstraHealth.Damage.PreDamageContext.Create(System.Int64,ElectricDrill.AstraHealth.Damage.DamageTypeSO,ElectricDrill.AstraHealth.Damage.DamageSourceSO,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Boolean,System.Double,ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator,System.Boolean,System.Boolean)
+  name: Create(long, DamageTypeSO, DamageSourceSO, EntityCore, EntityCore, bool, double, IEffectInstigator, bool, bool)
+  href: api/ElectricDrill.AstraHealth.Damage.PreDamageContext.html#ElectricDrill_AstraHealth_Damage_PreDamageContext_Create_System_Int64_ElectricDrill_AstraHealth_Damage_DamageTypeSO_ElectricDrill_AstraHealth_Damage_DamageSourceSO_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_System_Boolean_System_Double_ElectricDrill_AstraRpgFramework_Contexts_IEffectInstigator_System_Boolean_System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.Damage.PreDamageContext.Create(System.Int64,ElectricDrill.AstraHealth.Damage.DamageTypeSO,ElectricDrill.AstraHealth.Damage.DamageSourceSO,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Boolean,System.Double,ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator,System.Boolean,System.Boolean)
+  name.vb: Create(Long, DamageTypeSO, DamageSourceSO, EntityCore, EntityCore, Boolean, Double, IEffectInstigator, Boolean, Boolean)
+  fullName: ElectricDrill.AstraHealth.Damage.PreDamageContext.Create(long, ElectricDrill.AstraHealth.Damage.DamageTypeSO, ElectricDrill.AstraHealth.Damage.DamageSourceSO, ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, bool, double, ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator, bool, bool)
+  fullName.vb: ElectricDrill.AstraHealth.Damage.PreDamageContext.Create(Long, ElectricDrill.AstraHealth.Damage.DamageTypeSO, ElectricDrill.AstraHealth.Damage.DamageSourceSO, ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, Boolean, Double, ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator, Boolean, Boolean)
+  nameWithType: PreDamageContext.Create(long, DamageTypeSO, DamageSourceSO, EntityCore, EntityCore, bool, double, IEffectInstigator, bool, bool)
+  nameWithType.vb: PreDamageContext.Create(Long, DamageTypeSO, DamageSourceSO, EntityCore, EntityCore, Boolean, Double, IEffectInstigator, Boolean, Boolean)
+- uid: ElectricDrill.AstraHealth.Damage.PreDamageContext.Create*
+  name: Create
+  href: api/ElectricDrill.AstraHealth.Damage.PreDamageContext.html#ElectricDrill_AstraHealth_Damage_PreDamageContext_Create_
+  commentId: Overload:ElectricDrill.AstraHealth.Damage.PreDamageContext.Create
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.Damage.PreDamageContext.Create
+  nameWithType: PreDamageContext.Create
 - uid: ElectricDrill.AstraHealth.Damage.PreDamageContext.CriticalMultiplier
   name: CriticalMultiplier
   href: api/ElectricDrill.AstraHealth.Damage.PreDamageContext.html#ElectricDrill_AstraHealth_Damage_PreDamageContext_CriticalMultiplier
@@ -5319,6 +5374,66 @@ references:
   fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.CounterDamageGameActionSO(Of TContext).ExecuteAsync
   nameWithType: CounterDamageGameActionSO<TContext>.ExecuteAsync
   nameWithType.vb: CounterDamageGameActionSO(Of TContext).ExecuteAsync
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1
+  name: DealDamageGameActionSO<TContext>
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html
+  commentId: T:ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1
+  name.vb: DealDamageGameActionSO(Of TContext)
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO<TContext>
+  fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO(Of TContext)
+  nameWithType: DealDamageGameActionSO<TContext>
+  nameWithType.vb: DealDamageGameActionSO(Of TContext)
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ExecuteAsync(`0,System.Threading.CancellationToken)
+  name: ExecuteAsync(TContext, CancellationToken)
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html#ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ExecuteAsync__0_System_Threading_CancellationToken_
+  commentId: M:ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ExecuteAsync(`0,System.Threading.CancellationToken)
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO<TContext>.ExecuteAsync(TContext, System.Threading.CancellationToken)
+  fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO(Of TContext).ExecuteAsync(TContext, System.Threading.CancellationToken)
+  nameWithType: DealDamageGameActionSO<TContext>.ExecuteAsync(TContext, CancellationToken)
+  nameWithType.vb: DealDamageGameActionSO(Of TContext).ExecuteAsync(TContext, CancellationToken)
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ExecuteAsync*
+  name: ExecuteAsync
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html#ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ExecuteAsync_
+  commentId: Overload:ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ExecuteAsync
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO<TContext>.ExecuteAsync
+  fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO(Of TContext).ExecuteAsync
+  nameWithType: DealDamageGameActionSO<TContext>.ExecuteAsync
+  nameWithType.vb: DealDamageGameActionSO(Of TContext).ExecuteAsync
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveDealer(`0)
+  name: ResolveDealer(TContext)
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html#ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveDealer__0_
+  commentId: M:ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveDealer(`0)
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO<TContext>.ResolveDealer(TContext)
+  fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO(Of TContext).ResolveDealer(TContext)
+  nameWithType: DealDamageGameActionSO<TContext>.ResolveDealer(TContext)
+  nameWithType.vb: DealDamageGameActionSO(Of TContext).ResolveDealer(TContext)
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveDealer*
+  name: ResolveDealer
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html#ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveDealer_
+  commentId: Overload:ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveDealer
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO<TContext>.ResolveDealer
+  fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO(Of TContext).ResolveDealer
+  nameWithType: DealDamageGameActionSO<TContext>.ResolveDealer
+  nameWithType.vb: DealDamageGameActionSO(Of TContext).ResolveDealer
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveTarget(`0)
+  name: ResolveTarget(TContext)
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html#ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveTarget__0_
+  commentId: M:ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveTarget(`0)
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO<TContext>.ResolveTarget(TContext)
+  fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO(Of TContext).ResolveTarget(TContext)
+  nameWithType: DealDamageGameActionSO<TContext>.ResolveTarget(TContext)
+  nameWithType.vb: DealDamageGameActionSO(Of TContext).ResolveTarget(TContext)
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveTarget*
+  name: ResolveTarget
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO-1.html#ElectricDrill_AstraHealth_GameActions_Actions_DealDamageGameActionSO_1_ResolveTarget_
+  commentId: Overload:ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO`1.ResolveTarget
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO<TContext>.ResolveTarget
+  fullName.vb: ElectricDrill.AstraHealth.GameActions.Actions.DealDamageGameActionSO(Of TContext).ResolveTarget
+  nameWithType: DealDamageGameActionSO<TContext>.ResolveTarget
+  nameWithType.vb: DealDamageGameActionSO(Of TContext).ResolveTarget
 - uid: ElectricDrill.AstraHealth.GameActions.Actions.ResurrectEntityGameActionSO`1
   name: ResurrectEntityGameActionSO<TContext>
   href: api/ElectricDrill.AstraHealth.GameActions.Actions.ResurrectEntityGameActionSO-1.html
@@ -5451,6 +5566,12 @@ references:
   commentId: N:ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity
   fullName: ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity
   nameWithType: ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity
+- uid: ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO
+  name: DealDamageIHasEntityGameActionSO
+  href: api/ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO.html
+  commentId: T:ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO
+  fullName: ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO
+  nameWithType: DealDamageIHasEntityGameActionSO
 - uid: ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.EntityContextToDamageResolutionContextProjectionGameActionSO
   name: EntityContextToDamageResolutionContextProjectionGameActionSO
   href: api/ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.EntityContextToDamageResolutionContextProjectionGameActionSO.html
@@ -5857,6 +5978,22 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.Heal.PreHealContext.Builder
   nameWithType: PreHealContext.Builder
+- uid: ElectricDrill.AstraHealth.Heal.PreHealContext.Create(System.Int64,ElectricDrill.AstraHealth.Heal.HealSourceSO,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Boolean,System.Double,ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator,System.Boolean,System.Boolean)
+  name: Create(long, HealSourceSO, EntityCore, EntityCore, bool, double, IEffectInstigator, bool, bool)
+  href: api/ElectricDrill.AstraHealth.Heal.PreHealContext.html#ElectricDrill_AstraHealth_Heal_PreHealContext_Create_System_Int64_ElectricDrill_AstraHealth_Heal_HealSourceSO_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_System_Boolean_System_Double_ElectricDrill_AstraRpgFramework_Contexts_IEffectInstigator_System_Boolean_System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.Heal.PreHealContext.Create(System.Int64,ElectricDrill.AstraHealth.Heal.HealSourceSO,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Boolean,System.Double,ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator,System.Boolean,System.Boolean)
+  name.vb: Create(Long, HealSourceSO, EntityCore, EntityCore, Boolean, Double, IEffectInstigator, Boolean, Boolean)
+  fullName: ElectricDrill.AstraHealth.Heal.PreHealContext.Create(long, ElectricDrill.AstraHealth.Heal.HealSourceSO, ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, bool, double, ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator, bool, bool)
+  fullName.vb: ElectricDrill.AstraHealth.Heal.PreHealContext.Create(Long, ElectricDrill.AstraHealth.Heal.HealSourceSO, ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, Boolean, Double, ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator, Boolean, Boolean)
+  nameWithType: PreHealContext.Create(long, HealSourceSO, EntityCore, EntityCore, bool, double, IEffectInstigator, bool, bool)
+  nameWithType.vb: PreHealContext.Create(Long, HealSourceSO, EntityCore, EntityCore, Boolean, Double, IEffectInstigator, Boolean, Boolean)
+- uid: ElectricDrill.AstraHealth.Heal.PreHealContext.Create*
+  name: Create
+  href: api/ElectricDrill.AstraHealth.Heal.PreHealContext.html#ElectricDrill_AstraHealth_Heal_PreHealContext_Create_
+  commentId: Overload:ElectricDrill.AstraHealth.Heal.PreHealContext.Create
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.Heal.PreHealContext.Create
+  nameWithType: PreHealContext.Create
 - uid: ElectricDrill.AstraHealth.Heal.PreHealContext.CriticalMultiplier
   name: CriticalMultiplier
   href: api/ElectricDrill.AstraHealth.Heal.PreHealContext.html#ElectricDrill_AstraHealth_Heal_PreHealContext_CriticalMultiplier

@@ -95,6 +95,22 @@
 Classes
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.DealDamageIHasEntityGameActionSO.html">DealDamageIHasEntityGameActionSO</a></dt>
+      <dd><p>Inflicts configured damage on the entity carried by any <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IHasEntity</span> payload.
+Provided as a ScriptableObject for easy assignment in the editor.</p>
+<p>
+Connect to any <code>GameEventListener</code> whose payload implements <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IHasEntity</span>,
+such as <code>EntityDiedGameEventListener</code>, <code>EntityResurrectedGameEventListener</code>, or a
+<code>DamageResolutionGameEventListener</code>, and select
+<code>ExecuteAsyncForUnityEvent(IHasEntity)</code> as the dynamic invocation target.
+</p>
+The context entity is always the damage target. The embedded config's <code>Damage Dealer</code>
+role only distinguishes <code>None</code> (unattributed system damage) from self-inflicted damage
+dealt by that same entity; the <code>Damage Target</code> role is ignored.
+Create instances via Assets → Create → Astra Health/Game Actions/Context: Entity/Deal Damage.
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraHealth.GameActions.Actions.WithIHasEntity.EntityContextToDamageResolutionContextProjectionGameActionSO.html">EntityContextToDamageResolutionContextProjectionGameActionSO</a></dt>
       <dd><p>Attempts to narrow an <span class="xref">ElectricDrill.AstraRpgFramework.Contexts.IHasEntity</span> payload to a more specific context type and,
 if the runtime type matches, forwards the original payload to the wrapped action.

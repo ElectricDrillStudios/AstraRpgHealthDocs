@@ -220,6 +220,10 @@ targetHealth.Heal(preHealContext);
 <li>Call <code>Heal</code> passing the constructed context.</li>
 </ol>
 <p>The <code>PreHealContext</code> fluent builder is helpful because it guides you through required inputs first — the IDE will typically present required builder steps one at a time. When the builder presents multiple fields together, those fields are optional and can be omitted. Optional fields include the healer entity (<code>WithHealer</code>), the critical hit flag, the critical multiplier, the instigator (<code>WithInstigator</code>), and the reactability flag (<code>WithIsReactable</code>). <code>IsReactable</code> defaults to <code>true</code>; set it to <code>false</code> when building a secondary heal that reacts to another event, to prevent chain reactions. See <a href="game-actions.html#preventing-infinite-cycles">Preventing Infinite Cycles</a> for details.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>The fluent <code>Builder</code> is the recommended default.</strong> On very high-frequency heal paths (for example a heal-over-time applied to many entities every tick) you can use <code>PreHealContext.Create(...)</code> instead: it builds the context directly, without allocating the intermediate step-builder object. It accepts the same values the builder does. Reach for it only where profiling shows the builder allocations are a real cost.</p>
+</div>
 <h2 id="health-regeneration">Health Regeneration</h2>
 <p>Health regeneration is a mechanism that allows an entity to passively regenerate its health over time. In games generally, this mechanic is implemented through discrete regeneration ticks. Ticks, depending on the game, can be marked by the passage of time, or by certain events, like the end of a turn in a turn-based game.<br>
 This package supports both passive and manual regeneration.</p>

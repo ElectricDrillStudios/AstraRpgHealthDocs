@@ -580,6 +580,10 @@ var preDamageContext = PreDamageContext.Builder
         .WithDealer(skillCaster)   // optional
         .Build();
 </code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The fluent <code>Builder</code> is the ergonomic default and the right choice almost everywhere. On per-frame or very high-frequency damage paths — bullet-hell projectiles, damage-over-life ticks, large AoE loops — you can instead use <code>PreDamageContext.Create(...)</code>, which constructs the context directly without allocating the intermediate step-builder object. It takes the same values the builder does; prefer it only where profiling shows the builder allocations matter. <strong>For most cases, the Builder approach is preferable.</strong></p>
+</div>
 <h2 id="damage-modifiers">Damage Modifiers</h2>
 <p>Damage modifiers are a flexible tool for implementing mechanics such as resistances, weaknesses, buffs, and debuffs that affect how much damage an entity receives. Unlike <a href="../introduction.html#damage-modifiers-vs-defensive-stat-based-damage-mitigation">Defensive Stat-Based Damage Mitigation</a>, damage modifiers are off by default — their stats default to 0 — and can both increase and decrease the damage amount.</p>
 <p>Three categories of damage modifiers exist, and they all stack additively with one another:</p>
@@ -624,14 +628,14 @@ var preDamageContext = PreDamageContext.Builder
 <ul>
 <li><strong><code>InitialAmount</code></strong> — the original raw value; never modified after construction.</li>
 <li><strong><code>Current</code></strong> — the damage value as modified by each step; steps read and write this property.</li>
-<li><strong><code>Records</code></strong> — a read-only list of <code>StepAmountRecord</code> entries, each capturing the step type and the before/after <code>Current</code> values for that step. Useful for debugging and diagnostics.</li>
+<li><strong><code>Records</code></strong> — a read-only list of <code>StepAmountRecord</code> entries, each capturing the step type and the before/after <code>Current</code> values for that step. Useful for debugging and diagnostics. Recording this trace costs one list allocation per damage instance, so it is opt-in: it is controlled by the <strong>Damage Step Trace</strong> configuration field (on in the editor and development builds, off in release builds by default — see <a href="package-configuration.html#damage-step-trace">Damage Step Trace</a>). When the trace is disabled, <code>Records</code> is empty.</li>
 </ul>
 <p><strong><code>DamageResolutionContext</code></strong> is the value returned by <code>TakeDamage</code>. It contains:</p>
 <ul>
 <li><strong><code>Outcome</code></strong> — <code>DamageOutcome.Applied</code> or <code>DamageOutcome.Prevented</code>.</li>
 <li><strong><code>Reasons</code></strong> — the accumulated <code>DamagePreventionReason</code> flags when prevented; <code>None</code> when applied.</li>
 <li><strong><code>TerminationStepType</code></strong> — the <code>Type</code> of the step that caused early termination, if any.</li>
-<li><strong><code>FinalDamageInfo</code></strong> — the <code>DamageInfo</code> at the end of the pipeline; may be <code>null</code> when damage was prevented in the pre-phase.</li>
+<li><strong><code>FinalDamageInfo</code></strong> — the <code>DamageInfo</code> at the end of the pipeline; may be <code>null</code> when damage was prevented before any <code>DamageInfo</code> is built. This is the case when <code>PreDamageContext.Ignore</code> was <code>true</code> and, since the latest release, also when the target was <strong>already dead</strong> at the time of the call: the already-dead short-circuit (<code>Outcome = Prevented</code>, <code>Reasons</code> includes <code>EntityDead</code>) now runs before a <code>DamageInfo</code> is allocated. Guard against a <code>null</code> <code>FinalDamageInfo</code> whenever you inspect a prevented outcome.</li>
 <li><strong><code>PreDamageContext</code></strong> — the original input that initiated this damage attempt.</li>
 <li><strong><code>IsReactable</code></strong> — propagated from <code>PreDamageContext.IsReactable</code>. When <code>false</code>, reactive systems listening to damage resolution events should not respond to this outcome.</li>
 </ul>
@@ -687,7 +691,7 @@ var preDamageContext = PreDamageContext.Builder
 </tr>
 <tr>
 <td><code>EntityDead</code></td>
-<td>Target was already dead when <code>TakeDamage</code> was called.</td>
+<td>Target was already dead when <code>TakeDamage</code> was called. The call short-circuits before a <code>DamageInfo</code> is built, so <code>DamageResolutionContext.FinalDamageInfo</code> is <code>null</code> in this case.</td>
 </tr>
 </tbody>
 </table>

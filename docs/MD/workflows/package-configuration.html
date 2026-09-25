@@ -375,6 +375,38 @@ AstraHealthConfigProvider.Reset();
 <h5>Tip</h5>
 <p><strong>Floor</strong> ensures defensive calculations never accidentally round up in the attacker's favour. <strong>Ceil</strong> guarantees that small offensive or heal amounts are never silently truncated to zero. <strong>Round</strong> (the default) provides neutral, balanced behaviour suitable for most games.</p>
 </div>
+<h4 id="damage-step-trace">Damage Step Trace</h4>
+<p><strong>Type:</strong> <code>DamageStepTracePolicy</code><br>
+<strong>Default:</strong> <code>EditorAndDevelopmentBuilds</code><br>
+<strong>Required:</strong> No<br>
+<strong>Description:</strong> Controls whether the damage calculation pipeline records its per-step amount trace (<code>DamageAmountContext.Records</code> — the before/after damage value at each pipeline step). Recording the trace costs one list allocation per damage instance, so it can be turned off where it is not needed.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Always</strong> <em>(default)</em></td>
+<td>The trace is always recorded, including in release builds.</td>
+</tr>
+<tr>
+<td><strong>EditorAndDevelopmentBuilds</strong></td>
+<td>The trace is recorded in the editor and in development builds, and skipped in release builds.</td>
+</tr>
+<tr>
+<td><strong>Never</strong></td>
+<td>The trace is never recorded.</td>
+</tr>
+</tbody>
+</table>
+<p>The trace is used for debugging and diagnostics, and by <strong>Step</strong>-mode lifesteal (<a href="lifesteal.html#amount-selector">Amount Selector</a>), which samples the damage value at a chosen pipeline step. If you use step-based lifesteal in a release build, set this to <strong>Always</strong> — otherwise a one-time console warning is logged and step-based lifesteal falls back to the final damage amount. When the trace is disabled, <code>DamageAmountContext.Records</code> is empty.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you defined custom code that inspects damage steps, you NEED to leave it turned ON with <code>Always</code>, or your game logic will break.</p>
+</div>
 <hr>
 <h3 id="health-regeneration">Health Regeneration</h3>
 <p>These settings are shared by both automatic and manual regeneration. <code>EntityPassiveHpRegeneration</code> consumes the passive-tick settings described below, while <code>EntityHealth.ManualHealthRegenerationTick()</code> uses the same regeneration <code>HealSourceSO</code> together with the dedicated manual-regeneration stat.</p>

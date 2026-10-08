@@ -92,18 +92,20 @@ Both for the defensive and piercing stat, you can select a `DamageMitigationForm
 `DamageSource`, derived from `ScriptableObject`, represents the origin of the damage inflicted. They don't have any specific properties, but they can be assigned to other objects of the package to create specific behaviors based on the damage source. We will see for what and how in the Workflows.
 
 ### <img src="../images/AstraRPG/astra-health_flat-dmg-red-fo.png" alt="attribute" width="30" class="icon-background"/> <img src="../images/AstraRPG/astra-health_percentage-dmg-red-fo.png" alt="attribute" width="30" class="icon-background"/> <img src="../images/AstraRPG/astra-health_log-dmg-red-fo.png" alt="attribute" width="30" class="icon-background"/> Damage Mitigation Functions
-The package comes with three built-in `DamageMitigationFunction`s that you can use to define how defensive stats reduce incoming damage:
+The package comes with four built-in `DamageMitigationFunction`s that you can use to define how defensive stats reduce incoming damage:
 - <img src="../images/AstraRPG/astra-health_flat-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"/>`FlatDamageMitigationFn`: Reduces damage by a flat amount based on the defense stat value.
 - <img src="../images/AstraRPG/astra-health_percentage-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"/>`PercentageDamageMitigationFn`: Reduces damage by a percentage based on the defense stat value.
-- <img src="../images/AstraRPG/astra-health_log-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"/>`LogarithmicDamageMitigationFn`: Reduces damage using a logarithmic scale based on the defense stat value. 
+- `HyperbolicDamageMitigationFn` *(🏷️ 1.1.0+)*: Reduces damage by the share `X / (X + K)` of the defense stat value `X`, the formula of games like League of Legends and World of Warcraft. Recommended for new projects.
+- <img src="../images/AstraRPG/astra-health_log-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"/>`LogarithmicDamageMitigationFn` *(Legacy)*: Reduces damage using a logarithmic scale based on the defense stat value. Kept for backward compatibility.
 
 In case of need, custom damage mitigation functions can be created by extending the `DamageMitigationFn` class.
 
 ### <img src="../images/AstraRPG/astra-health_flat-def-red-fo.png" alt="attribute" width="30" class="icon-background"/> <img src="../images/AstraRPG/astra-health_percentage-def-red-fo.png" alt="attribute" width="30" class="icon-background"/> <img src="../images/AstraRPG/astra-health_log-def-red-fo.png" alt="attribute" width="30" class="icon-background"/> Defense Penetration Functions
-As for damage mitigation functions, the package comes with three built-in `DefensePenetrationFunction`s that you can use to define how piercing stats ignore a portion of the defense stat:
+As for damage mitigation functions, the package comes with four built-in `DefensePenetrationFunction`s that you can use to define how piercing stats ignore a portion of the defense stat:
 - <img src="../images/AstraRPG/astra-health_flat-def-red-fo.png" alt="attribute" width="23" class="icon-background"/>`FlatDefensePenetrationFn`: Ignores a flat amount of the defense stat based on the piercing stat value.
 - <img src="../images/AstraRPG/astra-health_percentage-def-red-fo.png" alt="attribute" width="23" class="icon-background"/>`PercentageDefensePenetrationFn`: Ignores a percentage of the defense stat based on the piercing stat value.
-- <img src="../images/AstraRPG/astra-health_log-def-red-fo.png" alt="attribute" width="23" class="icon-background"/>`LogarithmicDefensePenetrationFn`: Ignores a portion of the defense stat using a logarithmic scale based on the piercing stat value.
+- `HyperbolicDefensePenetrationFn` *(🏷️ 1.1.0+)*: Ignores the share `P / (P + K)` of the defense stat, where `P` is the piercing stat value. Recommended for new projects.
+- <img src="../images/AstraRPG/astra-health_log-def-red-fo.png" alt="attribute" width="23" class="icon-background"/>`LogarithmicDefensePenetrationFn` *(Legacy)*: Ignores a portion of the defense stat using a logarithmic scale based on the piercing stat value. Kept for backward compatibility.
 
 Also in this case, custom defense penetration functions can be created by extending the `DefensePenetrationFn` class.
 

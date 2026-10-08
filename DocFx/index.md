@@ -60,11 +60,12 @@ Damage Sources, like Damage Types, are bound to the specific game you're making.
 
 #### 🛡️ Damage Mitigation Functions
 
-The damage mitigation granted by defensive stats is modeled via mathematical functions. The framework comes with 3 pre-defined and very common functions to use in your game:
+The damage mitigation granted by defensive stats is modeled via mathematical functions. The framework comes with 4 pre-defined and very common functions to use in your game:
 
 - **Flat damage mitigation:** Each point of the defensive stat reduces incoming damage by *n* points, with *n* ≥ 1. The easiest and most predictable damage reduction function—eases the balancing of your game.
 - **Percentage damage mitigation:** The defensive stat expresses the percentage of damage reduction to apply. Useful for a defense that stays effective even when attacker/defender levels or damage-input/defensive-stat values differ greatly.
-- **Logarithmic damage mitigation:** Increments to the defensive stat provide diminishing returns as the value grows more and more. Useful for preventing complete damage negation.
+- **Hyperbolic damage mitigation:** Each point of the defensive stat removes the share `X / (X + K)` of the damage, the formula of League of Legends, Dota, World of Warcraft and Diablo. Diminishing returns without immunity, with an optional level-dependent `K`. Recommended for new projects.
+- **Logarithmic damage mitigation (Legacy):** Increments to the defensive stat provide diminishing returns as the value grows more and more. Useful for preventing complete damage negation.
 
 You can also implement your own custom damage reduction formulas and use those instead of the default ones—the framework is highly extensible.
 
@@ -72,7 +73,7 @@ You can also implement your own custom damage reduction formulas and use those i
 
 Similarly to Damage Mitigation Functions, these functions specify how a piercing stat should ignore defense when calculating the net damage to be taken.
 
-The package offers, out of the box, the same flat, percentage, and logarithmic functions.
+The package offers, out of the box, the same flat, percentage, hyperbolic, and logarithmic (legacy) functions.
 
 #### ⚙️ Damage Calculation Pipeline
 

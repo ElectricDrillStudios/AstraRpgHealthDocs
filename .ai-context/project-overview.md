@@ -24,8 +24,8 @@ On Windows workstation, the relevant paths are:
 On Ubuntu workstation, the paths are:
 | Asset | Path |
 |---|---|
-| Health package source | `/home/emanuele/RiderProjects/Geometrical-Invaders/Packages/com.electricdrill.astra-health/` |
-| Framework source | `/home/emanuele/RiderProjects/Geometrical-Invaders/Packages/com.electricdrill.astra-rpg-framework/` |
+| Health package source | `/home/emanuele/AstraTesting/Packages/individual.emanuele-cisotto.astra-health/` |
+| Framework source | `/home/emanuele/AstraTesting/Packages/com.electricdrill.astra-rpg-framework/` |
 | Documentation markdown | `/home/emanuele/Documents/Personal/ElectricDrill/AstraRpgHealthDocs/DocFx/MD/` |
 | Documentation images | `/home/emanuele/Documents/Personal/ElectricDrill/AstraRpgHealthDocs/DocFx/images/AstraRPG/` |
 | AI context (this folder) | `/home/emanuele/Documents/Personal/ElectricDrill/AstraRpgHealthDocs/_ai-context/` |

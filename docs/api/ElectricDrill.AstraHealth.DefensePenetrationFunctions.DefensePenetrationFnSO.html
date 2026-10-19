@@ -131,6 +131,7 @@ Implementations compute a reduced defense value based on a piercing stat and the
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.FlatDefensePenetrationFnSO.html">FlatDefensePenetrationFnSO</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.html">HyperbolicDefensePenetrationFnSO</a></div>
       <div><a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.LogDefensePenetrationFnSO.html">LogDefensePenetrationFnSO</a></div>
       <div><a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.PercentageDefensePenetrationFnSO.html">PercentageDefensePenetrationFnSO</a></div>
     </dd>
@@ -151,6 +152,63 @@ Implementations compute a reduced defense value based on a piercing stat and the
 
   <h2 class="section" id="methods">Methods
 </h2>
+
+
+  <a id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)">
+  CalculatePiercedDefense(long, long, StatSO, in ReductionContext, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/DefensePenetrationFnSO.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Same as <a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.html#ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Boolean_">CalculatePiercedDefense(long, long, StatSO, bool)</a>, for functions that also
+depend on the entities involved (a constant that grows with the attacker's level, another stat of the attacker).
+The damage pipeline always calls this overload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual double CalculatePiercedDefense(long piercingStatValue, long defensiveStatValue, StatSO defensiveStat, in ReductionContext context, bool applyClamp = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>piercingStatValue</code> <span class="xref">long</span></dt>
+    <dd><p>The attacker's piercing stat value used to reduce defense.</p>
+</dd>
+    <dt><code>defensiveStatValue</code> <span class="xref">long</span></dt>
+    <dd><p>The defender's original defense stat value to be reduced.</p>
+</dd>
+    <dt><code>defensiveStat</code> <span class="xref">StatSO</span></dt>
+    <dd><p>The defensive stat object used to clamp the result within its min/max bounds.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html">ReductionContext</a></dt>
+    <dd><p>The entities involved in the hit: their levels and stats. Valid only during the call.</p>
+</dd>
+    <dt><code>applyClamp</code> <span class="xref">bool</span></dt>
+    <dd><p>Whether to apply stat clamping to the result.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">double</span></dt>
+    <dd><p>The reduced defense value (clamped if applyClamp is true).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The default implementation ignores <code class="paramref">context</code> and forwards to the abstract overload,
+so existing implementations keep working unchanged. Override it to use the context.</p>
+</div>
+
+
 
 
   <a id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense*"></a>

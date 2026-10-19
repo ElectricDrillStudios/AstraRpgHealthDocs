@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/main/DocFx/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/1.1.0/DocFx/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -115,16 +115,17 @@ Join to <strong>receive notifications</strong> about new extension releases and 
 <h4 id="-damage-sources">🎯 Damage Sources</h4>
 <p>Damage Sources, like Damage Types, are bound to the specific game you're making. They represent the origin of the damage inflicted on an entity—examples include Skill, Trap, Environment, etc. They can be used to implement specific game mechanics, such as resistances or vulnerabilities to certain sources of damage, or to track in a damage log where the damage came from.</p>
 <h4 id="-damage-mitigation-functions">🛡️ Damage Mitigation Functions</h4>
-<p>The damage mitigation granted by defensive stats is modeled via mathematical functions. The framework comes with 3 pre-defined and very common functions to use in your game:</p>
+<p>The damage mitigation granted by defensive stats is modeled via mathematical functions. The framework comes with 4 pre-defined and very common functions to use in your game:</p>
 <ul>
 <li><strong>Flat damage mitigation:</strong> Each point of the defensive stat reduces incoming damage by <em>n</em> points, with <em>n</em> ≥ 1. The easiest and most predictable damage reduction function—eases the balancing of your game.</li>
 <li><strong>Percentage damage mitigation:</strong> The defensive stat expresses the percentage of damage reduction to apply. Useful for a defense that stays effective even when attacker/defender levels or damage-input/defensive-stat values differ greatly.</li>
-<li><strong>Logarithmic damage mitigation:</strong> Increments to the defensive stat provide diminishing returns as the value grows more and more. Useful for preventing complete damage negation.</li>
+<li><strong>Hyperbolic damage mitigation:</strong> Each point of the defensive stat removes the share <code>X / (X + K)</code> of the damage, the formula of League of Legends, Dota, World of Warcraft and Diablo. Diminishing returns without immunity, with an optional level-dependent <code>K</code>. Recommended for new projects.</li>
+<li><strong>Logarithmic damage mitigation (Legacy):</strong> Increments to the defensive stat provide diminishing returns as the value grows more and more. Useful for preventing complete damage negation.</li>
 </ul>
 <p>You can also implement your own custom damage reduction formulas and use those instead of the default ones—the framework is highly extensible.</p>
 <h4 id="-defense-penetration-functions">🛡️ Defense Penetration Functions</h4>
 <p>Similarly to Damage Mitigation Functions, these functions specify how a piercing stat should ignore defense when calculating the net damage to be taken.</p>
-<p>The package offers, out of the box, the same flat, percentage, and logarithmic functions.</p>
+<p>The package offers, out of the box, the same flat, percentage, hyperbolic, and logarithmic (legacy) functions.</p>
 <h4 id="-damage-calculation-pipeline">⚙️ Damage Calculation Pipeline</h4>
 <p>The Damage Calculation Pipeline models the process of transforming raw damage—the damage an attack/ability/trap/etc. intends to deal to an entity—into net damage, the actual damage taken by the entity. It can be customized so the various steps are applied in the desired order; since the order of application is not idempotent, the pipeline can be tailored to your game's needs.</p>
 <p>The package comes with these pre-defined steps:</p>

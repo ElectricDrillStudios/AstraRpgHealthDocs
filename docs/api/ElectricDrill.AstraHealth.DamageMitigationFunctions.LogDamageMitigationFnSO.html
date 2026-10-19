@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class LogDamageMitigationFnSO | Astra Health ">
       
-      
+      <meta name="description" content="Legacy logarithmic mitigation. Kept so existing assets keep working; prefer  for new work. For small defense values it behaves like the hyperbolic function with K = BaseValue / ScaleFactor; at high values it grows far more slowly.">
       <link rel="icon" href="../images/astra-health-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraHealth_DamageMitigationFunctions_LogDamageMitigationFnSO" data-uid="ElectricDrill.AstraHealth.DamageMitigationFunctions.LogDamageMitigationFnSO" class="text-break">
-Class LogDamageMitigationFnSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DamageMitigationFunctions/LogDamageMitigationFnSO.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class LogDamageMitigationFnSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DamageMitigationFunctions/LogDamageMitigationFnSO.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,10 @@ Class LogDamageMitigationFnSO  <a class="header-action link-secondary" title="Vi
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-health.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Legacy logarithmic mitigation. Kept so existing assets keep working; prefer
+<a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html">HyperbolicDamageMitigationFnSO</a> for new work. For small defense values it behaves like
+the hyperbolic function with <code>K = BaseValue / ScaleFactor</code>; at high values it grows far more slowly.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -131,6 +134,9 @@ Class LogDamageMitigationFnSO  <a class="header-action link-secondary" title="Vi
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.html#ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__">DamageMitigationFnSO.CalculateMitigatedDamage(long, double, RoundingMode, in ReductionContext)</a>
+    </div>
+    <div>
       <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionFnSO.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionFnSO_Tags">ReductionFnSO.Tags</a>
     </div>
   </dd></dl>
@@ -148,7 +154,7 @@ Class LogDamageMitigationFnSO  <a class="header-action link-secondary" title="Vi
 
   <h3 id="ElectricDrill_AstraHealth_DamageMitigationFunctions_LogDamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_" data-uid="ElectricDrill.AstraHealth.DamageMitigationFunctions.LogDamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode)">
   CalculateMitigatedDamage(long, double, RoundingMode)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DamageMitigationFunctions/LogDamageMitigationFnSO.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DamageMitigationFunctions/LogDamageMitigationFnSO.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reduces damage using a logarithmic formula that produces diminishing returns as

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/main/DocFx/MD/workflows/damage.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/1.1.0/DocFx/MD/workflows/damage.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -125,7 +125,8 @@ The value of the defensive stat is fed into the associated <strong>Damage Mitiga
 <ul>
 <li><strong>Flat Dmg Mitigation</strong>: Reduces damage by a flat amount equal to the defensive stat value multiplied by a constant.</li>
 <li><strong>Percent Dmg Mitigation</strong>: Reduces damage by a percentage equal to the defensive stat value.</li>
-<li><strong>Log Dmg Mitigation</strong>: Reduces damage in a logarithmic way based on the defensive stat value, providing diminishing returns as the stat increases.</li>
+<li><strong>Hyperbolic Dmg Mitigation</strong> <em>(🏷️ 1.1.0+)</em>: Reduces damage by the share <code>X / (X + K)</code>, the formula used by games such as League of Legends, Dota, World of Warcraft and Diablo. Diminishing returns, no damage immunity, and an easy-to-budget stat. <strong>Recommended for new projects</strong> that need diminishing returns.</li>
+<li><strong>Log Dmg Mitigation</strong> <em>(Legacy)</em>: Reduces damage in a logarithmic way based on the defensive stat value, providing diminishing returns as the stat increases. Kept for backward compatibility: prefer the hyperbolic function for new work.</li>
 </ul>
 <div class="NOTE">
 <h5>Note</h5>
@@ -179,7 +180,92 @@ The percentage damage mitigation function reduces incoming damage by a percentag
 <li>High risk of damage immunity at extreme values: once the defensive stat reaches 100, the entity becomes completely immune to that damage type. This can be especially problematic for tank-oriented entities or builds designed to stack defensive stats.</li>
 <li>Can make late-game balancing challenging if stat values are not tightly bounded.</li>
 </ul>
+<h4 id="damage-mitigation-functions---hyperbolic-dmg-mitigation">Damage Mitigation Functions - Hyperbolic Dmg Mitigation</h4>
+<p><em>🏷️ Version 1.1.0+</em></p>
+<p><em>Relative path:</em> <code>Dmg Mitigation Functions -&gt; Hyperbolic Dmg Mitigation</code></p>
+<p><img src="../../images/AstraRPG/workflows/damage/damage-type/damage-reduction-functions-hyperbolic.png" alt="Hyperbolic Dmg Mitigation"><br>
+The hyperbolic damage mitigation function is the formula popularized by League of Legends, Dota, World of Warcraft and Diablo. The defensive stat <code>X</code> removes the share <code>X / (X + K)</code> of the incoming damage, where <code>K</code> is the amount of defense that gives exactly 50% mitigation. Like the logarithmic function it has diminishing returns and never reaches 100% mitigation, but it is far easier to reason about: every <code>K</code> points of defense always add the same number of hits the entity can survive.</p>
+<p><strong>The Formula</strong></p>
+<pre><code>Damage Taken = Damage × K / (X + K)
+</code></pre>
+<p>With <code>K = 100</code>, the damage that goes through is 1/2 with a defensive stat of 100, 1/3 with 200, 1/4 with 300, and so on (mitigation of 50%, 66.7%, 75%...).</p>
+<p>The key property of this formula is that <strong>every <code>K</code> points of defense add the same number of hits the entity can survive</strong> (assuming every hit deals the same damage). For example, with <code>K = 100</code>, 1000 health and hits of 100 damage:</p>
+<table>
+<thead>
+<tr>
+<th>Defensive stat</th>
+<th>Damage per hit</th>
+<th>Hits survived</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>100</td>
+<td>10</td>
+</tr>
+<tr>
+<td>100</td>
+<td>50</td>
+<td>20 (10 + 10)</td>
+</tr>
+<tr>
+<td>200</td>
+<td>33.3</td>
+<td>30 (10 + 2 × 10)</td>
+</tr>
+<tr>
+<td>300</td>
+<td>25</td>
+<td>40 (10 + 3 × 10)</td>
+</tr>
+</tbody>
+</table>
+<p>Every 100 points of defense always give the same benefit, so the stat is easy to budget and, unlike percentage mitigation, the entity never becomes immune to damage. This is what is usually called <em>effective health</em>: the raw damage needed to kill the entity, <code>Health × (1 + X / K)</code>.</p>
+<p><code>K</code> is computed as <code>Base Value + Per Level × level</code>, and is configured directly on the asset:</p>
+<ul>
+<li><strong>Base Value</strong>: the constant part of <code>K</code>. Use it alone for a fixed <code>K</code>, such as the 100 of League of Legends.</li>
+<li><strong>Per Level</strong>: the amount <code>K</code> grows with each level. Use it for level-dependent scaling, such as the <code>400 + 85 × level</code> of World of Warcraft, so that the same defensive stat is worth less as the character levels up.</li>
+<li><strong>Level Source</strong>: whose level is used in the formula, the attacker's (default) or the target's. If the hit has no performer, the target's level is used.</li>
+</ul>
+<p>The inspector also offers League of Legends-like and World of Warcraft-like presets to fill these values quickly. A defensive stat of zero or less leaves the damage unchanged.</p>
+<p><strong>Hyperbolic Damage Mitigation Graph</strong><br>
+A dedicated visualization window lets you see the effect of <code>K</code> at a glance. You can open it in two ways:</p>
+<ul>
+<li>Clicking the <strong>Open Graph Visualizer</strong> button in the inspector of any <code>Hyperbolic Dmg Mitigation</code> asset: the window opens already filled with the <strong>Base Value</strong> and <strong>Per Level</strong> of the asset.</li>
+<li>From the Unity menu: <code>Tools → Astra Health → Hyperbolic Damage Mitigation Graph</code>.</li>
+</ul>
+<p>The window plots the formula on its own, without requiring a <code>DamageTypeSO</code>. It should look like this:</p>
+<p><img src="../../images/AstraRPG/workflows/damage/damage-type/hyperbolic-dmg-red-graph-visualizer.png" alt="Hyperbolic Dmg Mitigation Graph"></p>
+<p>The window plots <strong>Damage Mitigation %</strong> on the Y-axis and the <strong>Defensive Stat value</strong> on the X-axis, and offers two views:</p>
+<ul>
+<li><strong>Constant K</strong>: draws a single curve for the <code>K</code> you type (100 by default, like League of Legends) and marks on it the stat value that gives 50% mitigation.</li>
+<li><strong>Level-dependent K</strong> (<code>Base Value + Per Level × level</code>): draws five curves, one per level from 1 to <strong>Max Level</strong>, so you can see how the same stat loses value as levels grow. <strong>Max Level</strong> can be a plain number or an <code>IntVarSO</code>, such as your game's maximum level, and is remembered for each project and user.</li>
+</ul>
+<p>The <strong>Max Stat</strong> field sets the upper bound of the X-axis and accepts any value from 1. The same League of Legends-like and World of Warcraft-like presets are available to fill <code>K</code>.</p>
+<p><strong>Use Cases</strong>:</p>
+<ul>
+<li>RPGs and action games with wide stat ranges and long progression, where defense should always matter without ever granting immunity.</li>
+<li>Projects that want to budget defense in terms of survivable hits, or that need <code>K</code> to scale with level so that stats do not have to be rebalanced at every level.</li>
+</ul>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Inherently prevents complete damage immunity: mitigation approaches but never reaches 100%.</li>
+<li>Every <code>K</code> points of defense add the same number of survivable hits, so the stat is easy to budget and compare across builds.</li>
+<li>Familiar to players of the most popular competitive and RPG titles.</li>
+<li>Supports level-dependent scaling out of the box.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Less immediate than flat or percentage reduction: the mitigation for a given stat value depends on <code>K</code>, so the graph window is useful to tune it.</li>
+<li>Returns diminish only gradually: very high stat values still yield small, but real, gains in survivable hits, so extreme stacking is not strongly discouraged as with the logarithmic function.</li>
+</ul>
 <h4 id="damage-mitigation-functions---log-dmg-mitigation">Damage Mitigation Functions - Log Dmg Mitigation</h4>
+<p><em>Legacy</em></p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The logarithmic functions are <strong>Legacy</strong>: they are kept so existing assets and projects keep working, and their behavior is unchanged, but new work should use the <a href="#damage-mitigation-functions---hyperbolic-dmg-mitigation">hyperbolic functions</a>. The two are not interchangeable: for small values they behave similarly, but at high values the logarithmic curve grows far more slowly. If you switch, rebalance your stats instead of swapping the asset.</p>
+</div>
 <p><em>Relative path:</em> <code>Dmg Mitigation Functions -&gt; Log Dmg Mitigation</code></p>
 <p><img src="../../images/AstraRPG/workflows/damage/damage-type/damage-reduction-functions-log.png" alt="Log Dmg Mitigation"><br>
 The logarithmic damage mitigation function reduces damage using a logarithmic curve, providing diminishing returns as the defensive stat value increases. A small initial investment in the defensive stat yields a substantial reduction, while further investment produces progressively smaller gains. This makes it theoretically impossible to reach 100% reduction regardless of how high the stat grows.</p>
@@ -234,8 +320,12 @@ Because the non-linear nature of the formula makes it difficult to reason about 
 <li>More complex to debug and tune: the non-linear relationship between the stat and the reduction requires more careful analysis and testing during development.</li>
 </ul>
 <h4 id="damage-mitigation-functions---custom-dmg-mitigation-functions">Damage Mitigation Functions - Custom Dmg Mitigation Functions</h4>
-<p>If you want to provide your own custom damage mitigation function, you can create a new class that inherits from <a class="xref" href="../../api/ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.html">DamageMitigationFnSO</a> and implement the <code>CalculateReducedDamage</code> method. Remember to use the <code>CreateAssetMenu</code> attribute (or the <code>MenuItem</code> attribute) to make it creatable from the Unity editor.<br>
-You can take a look at the existing damage mitigation functions implementations for reference.</p>
+<p>If you want to provide your own custom damage mitigation function, you can create a new class that inherits from <a class="xref" href="../../api/ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.html">DamageMitigationFnSO</a> and implement the <code>CalculateReducedDamage</code> method. Remember to use the <code>CreateAssetMenu</code> attribute (or the <code>MenuItem</code> attribute) to make it creatable from the Unity editor.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><em>🏷️ Version 1.1.0+</em> — Functions that need more than the stat value, such as the attacker's or target's level, can override the context-aware overload that receives a <code>ReductionContext</code>. The context exposes the target and performer entities, their stats (<code>TargetStats</code>, <code>PerformerStats</code>) and their levels. Functions written for version 1.0.0 keep working unchanged.</p>
+</div>
+<p>You can take a look at the existing damage mitigation functions implementations for reference.</p>
 <h4 id="defense-penetration">Defense Penetration</h4>
 <p>Defense penetration allows the damage dealer to partially bypass the target's defensive stat before damage mitigation is calculated. This mechanism is useful for implementing mechanics such as armor penetration or magic penetration, where an attacker can reduce the effective defenses of the target.</p>
 <p>Two optional parameters of the <code>DamageTypeSO</code> control this behavior:</p>
@@ -264,12 +354,16 @@ You can take a look at the existing damage mitigation functions implementations 
 <li><strong>Defense Penetration Fn</strong>: Flat Def Penetration with a factor of 1.</li>
 </ul>
 <p>In this case, if the target has Armor equal to 30 and the attacker has Armor Penetration equal to 10, the effective Armor value fed into the Damage Mitigation Fn will be 30 (Armor) − 10 (Armor Penetration) × 1 (factor) = 20. So, if the incoming damage is 80, the final damage taken will be 80 − 20 (effective Armor) = 60 Physical damage. This example assumes no other damage modifications are active.</p>
-<p>The package provides three built-in Defense Penetration Functions — Flat, Percentage, and Logarithmic — that work in a fully analogous way to their counterparts described in the <a href="#damage-types-damage-mitigation">Damage Mitigation</a> section above. The parameters, trade-offs, and use cases of each variant are the same; the only difference is that these functions operate on the <strong>defensive stat value</strong> rather than directly on the damage amount. For a detailed description of each, refer to the <a href="#damage-types-damage-mitigation">Damage Mitigation</a> section.</p>
+<p>The package provides four built-in Defense Penetration Functions — Flat, Percentage, Hyperbolic <em>(🏷️ 1.1.0+)</em>, and Logarithmic <em>(Legacy)</em> — that work in a fully analogous way to their counterparts described in the <a href="#damage-types-damage-mitigation">Damage Mitigation</a> section above. The parameters, trade-offs, and use cases of each variant are the same; the only difference is that these functions operate on the <strong>defensive stat value</strong> rather than directly on the damage amount. For a detailed description of each, refer to the <a href="#damage-types-damage-mitigation">Damage Mitigation</a> section.</p>
 <p><em>Relative path:</em> <code>Def Penetration Functions -&gt; Flat Def Penetration</code><br>
 <img src="../../images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-flat.png" alt="Flat Def Penetration"></p>
 <p><em>Relative path:</em> <code>Def Penetration Functions -&gt; Percentage Def Penetration</code><br>
 <img src="../../images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-percentage.png" alt="Percentage Def Penetration"></p>
+<p><em>Relative path:</em> <code>Def Penetration Functions -&gt; Hyperbolic Def Penetration</code><br>
+<img src="../../images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-hyperbolic.png" alt="Hyperbolic Def Penetration"></p>
+<p><em>🏷️ Version 1.1.0+</em> — Removes the share <code>P / (P + K)</code> of the target's defensive stat, where <code>P</code> is the piercing stat. The effective defense is <code>Defense × K / (P + K)</code>. <code>K</code>, <strong>Base Value</strong>, <strong>Per Level</strong> and <strong>Level Source</strong> work exactly as in the <a href="#damage-mitigation-functions---hyperbolic-dmg-mitigation">Hyperbolic Dmg Mitigation</a> function, and the inspector has the same presets and an <strong>Open Graph Visualizer</strong> button that opens the <code>Tools → Astra Health → Hyperbolic Defense Penetration Graph</code> window, which plots the formula the same way. A piercing stat of zero or less leaves the defense unchanged.</p>
 <p><em>Relative path:</em> <code>Def Penetration Functions -&gt; Log Def Penetration</code><br>
+<em>Legacy</em>: prefer the hyperbolic function for new work.<br>
 <img src="../../images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-log.png" alt="Log Def Penetration"></p>
 <p>If none of the built-in Defense Penetration Functions suits your needs, you can implement a custom one by creating a class that inherits from <a class="xref" href="../../api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.html">DefensePenetrationFnSO</a> and implementing the <code>CalculateReducedDefense</code> method. As with the Damage Mitigation Functions, remember to use the <code>CreateAssetMenu</code> attribute (or the <code>MenuItem</code> attribute) to make it creatable from the Unity editor.</p>
 <h3 id="damage-types-damage-modifiers">Damage Type's Damage Modifiers</h3>
@@ -427,6 +521,10 @@ Displays the <code>DamageTypeSO</code> that opened the window as a disabled fiel
 <tr>
 <td><strong>Defender</strong></td>
 <td>An in-scene <code>GameObject</code> with <code>EntityCore</code> and <code>EntityStats</code>. When assigned, the <strong>Defender Breakdown</strong> panel appears below the Resolved Values panel.</td>
+</tr>
+<tr>
+<td><strong>Attacker Level</strong> / <strong>Defender Level</strong></td>
+<td><em>(🏷️ 1.1.0+)</em> The levels used to evaluate level-dependent functions, such as the hyperbolic ones with a <strong>Per Level</strong> value. When an Attacker or Defender is assigned, the level is read from the entity; otherwise you can type it.</td>
 </tr>
 </tbody>
 </table>

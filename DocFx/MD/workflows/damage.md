@@ -100,7 +100,6 @@ The percentage damage mitigation function reduces incoming damage by a percentag
 *Relative path:* `Dmg Mitigation Functions -> Hyperbolic Dmg Mitigation`  
 
 ![Hyperbolic Dmg Mitigation](../../images/AstraRPG/workflows/damage/damage-type/damage-reduction-functions-hyperbolic.png)  
-<!-- IMAGE MISSING: damage-reduction-functions-hyperbolic.png — screenshot of the Hyperbolic Dmg Mitigation asset inspector -->
 The hyperbolic damage mitigation function is the formula popularized by League of Legends, Dota, World of Warcraft and Diablo. The defensive stat `X` removes the share `X / (X + K)` of the incoming damage, where `K` is the amount of defense that gives exactly 50% mitigation. Like the logarithmic function it has diminishing returns and never reaches 100% mitigation, but it is far easier to reason about: every `K` points of defense always add the same number of hits the entity can survive.
 
 **The Formula**  
@@ -137,7 +136,6 @@ A dedicated visualization window lets you see the effect of `K` at a glance. You
 The window plots the formula on its own, without requiring a `DamageTypeSO`. It should look like this:
 
 ![Hyperbolic Dmg Mitigation Graph](../../images/AstraRPG/workflows/damage/damage-type/hyperbolic-dmg-red-graph-visualizer.png)
-<!-- IMAGE MISSING: hyperbolic-dmg-red-graph-visualizer.png — screenshot of the Hyperbolic Damage Mitigation Graph window -->
 
 The window plots **Damage Mitigation %** on the Y-axis and the **Defensive Stat value** on the X-axis, and offers two views:
 
@@ -264,7 +262,7 @@ The package provides four built-in Defense Penetration Functions — Flat, Perce
 
 *Relative path:* `Def Penetration Functions -> Hyperbolic Def Penetration`  
 ![Hyperbolic Def Penetration](../../images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-hyperbolic.png)
-<!-- IMAGE MISSING: defense-reduction-functions-hyperbolic.png — screenshot of the Hyperbolic Def Penetration asset inspector -->
+
 *🏷️ Version 1.1.0+* — Removes the share `P / (P + K)` of the target's defensive stat, where `P` is the piercing stat. The effective defense is `Defense × K / (P + K)`. `K`, **Base Value**, **Per Level** and **Level Source** work exactly as in the [Hyperbolic Dmg Mitigation](#damage-mitigation-functions---hyperbolic-dmg-mitigation) function, and the inspector has the same presets and an **Open Graph Visualizer** button that opens the `Tools → Astra Health → Hyperbolic Defense Penetration Graph` window, which plots the formula the same way. A piercing stat of zero or less leaves the defense unchanged.
 
 *Relative path:* `Def Penetration Functions -> Log Def Penetration`  

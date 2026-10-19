@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct ReductionContext | Astra Health </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct ReductionContext | Astra Health ">
+      
+      <meta name="description" content="The entities involved in a hit, handed to damage mitigation and defense penetration functions that depend on more than the stat values: a formula whose constant grows with the attacker&#39;s level, or one driven by another stat of the attacker or the target.">
+      <link rel="icon" href="../images/astra-health-ico.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRPGHealth/new/main/apiSpec/new?filename=ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-health.svg" alt="Astra Health">
+            Astra Health
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext">
+
+
+
+  <h1 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext" class="text-break">
+Struct ReductionContext  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraHealth.html">AstraHealth</a>.<a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.html">ReductionFunctions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>com.electricdrill.astra-health.Runtime.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The entities involved in a hit, handed to damage mitigation and defense penetration functions that depend
+on more than the stat values: a formula whose constant grows with the attacker's level, or one driven by
+another stat of the attacker or the target.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly struct ReductionContext</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>
+It carries references and derives what it exposes only when asked, so a function that needs nothing from
+it (flat, percentage, logarithmic) costs nothing. Future inputs are added as properties here, not as new
+parameters on the functions.
+</p>
+<p>
+  <b>Entity-backed or value-backed.</b> The damage pipeline builds an entity-backed context. Tools and tests
+that have no entities can state levels directly with <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_System_Int32_System_Int32_">ReductionContext(int, int)</a>, and the
+full constructor lets an explicit level take precedence over the entity's. <code>default</code> is a valid
+context: no entities, target level 1, no performer (the same as <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Default">Default</a>).
+</p>
+<p>
+  <b>Contract for functions.</b> The context is valid only during the call: do not store it or its
+references. Functions are pure, so treat the entities as read-only even though they are reachable.
+Read a stat with <code>TryGet</code> on <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetStats">TargetStats</a> / <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerStats">PerformerStats</a> and treat a missing
+stat as 0: those readers are <code>null</code> when the context was built from levels alone.
+</p>
+<p>
+  <b>What is not a stat.</b>
+  <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetStats">TargetStats</a> and <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerStats">PerformerStats</a> exist to read stats the
+way the pipeline does: the attacker's through the ownership fallback chain, which an entity cannot derive on its
+own (hence the reader the pipeline injects for it; the target has no chain and is read directly). Anything
+else is reached through <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Target">Target</a> and <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Performer">Performer</a>. The target's maximum health, for
+example, is not a stat but <code>EntityHealth.MaxHp</code>: <code>context.Target.GetEntityHealth()</code> returns it, or
+<code>null</code> when the context has no target entity or the target has no health component.
+</p>
+<p>
+It is a readonly struct passed by <code>in</code>: building and passing it does not allocate, which matters on
+the per-hit damage path.
+</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_Stats_IStatReader_System_Int32_System_Int32_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.Stats.IStatReader,System.Int32,System.Int32)">
+  ReductionContext(EntityCore, EntityCore, IStatReader, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds a context from the entities of a hit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReductionContext(EntityCore target, EntityCore performer, IStatReader performerStats = null, int targetLevel = 0, int performerLevel = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">EntityCore</span></dt>
+    <dd><p>The entity taking the damage. May be <code>null</code>.</p>
+</dd>
+    <dt><code>performer</code> <span class="xref">EntityCore</span></dt>
+    <dd><p>The entity the damage is attributed to: the performer itself, or its resolved
+owner under an ownership attribution. <code>null</code> for environmental damage.</p>
+</dd>
+    <dt><code>performerStats</code> <span class="xref">IStatReader</span></dt>
+    <dd><p>The reader used for the attacker's stats, which under an ownership
+attribution falls back from the performer to its owner. When <code>null</code>, <code class="paramref">performer</code> is used.</p>
+</dd>
+    <dt><code>targetLevel</code> <span class="xref">int</span></dt>
+    <dd><p>An explicit target level that takes precedence over the entity's. 0 or less reads it from the entity.</p>
+</dd>
+    <dt><code>performerLevel</code> <span class="xref">int</span></dt>
+    <dd><p>An explicit performer level that takes precedence over the entity's. 0 or less reads it from the entity.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_System_Int32_System_Int32_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor(System.Int32,System.Int32)">
+  ReductionContext(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds a context from levels alone, with no entities (so no stat readers).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReductionContext(int targetLevel, int performerLevel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>targetLevel</code> <span class="xref">int</span></dt>
+    <dd><p>Level of the damage target. Values below 1 are raised to 1.</p>
+</dd>
+    <dt><code>performerLevel</code> <span class="xref">int</span></dt>
+    <dd><p>Level of the attacker, or 0 (or less) when there is no performer.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Default" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Default">
+  Default
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Context used when no entity is known (tools, callers of the context-free overloads): the target is
+level 1 and there is no performer, so every level source resolves to level 1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly ReductionContext Default</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html">ReductionContext</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_HasPerformer_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_HasPerformer" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer">
+  HasPerformer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><code>true</code> when the hit has an attacker: a performer entity or an explicit performer level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasPerformer { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Performer_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Performer" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer">
+  Performer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The entity the hit is attributed to: the performer itself, or its resolved owner under an ownership
+attribution (a level 1 weapon owned by a level 50 hero attacks as the hero). <code>null</code> for
+environmental damage, or when the context was built from levels alone.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCore Performer { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EntityCore</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerLevel_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerLevel" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel">
+  PerformerLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Level of the entity the hit is attributed to: the explicit one if given, otherwise the performer's,
+otherwise 0 when there is no performer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PerformerLevel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerStats_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerStats" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats">
+  PerformerStats
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reader for the attacker's stats, consistent with the stats the piercing stat is read from: under an
+ownership attribution the performer's own stats come first and its owner's fill the gaps.
+<code>null</code> when there is no performer entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IStatReader PerformerStats { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">IStatReader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Target_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Target" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target">
+  Target
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The entity taking the damage, or <code>null</code> when the context was built from levels alone.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCore Target { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EntityCore</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetLevel_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetLevel" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel">
+  TargetLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Level of the entity taking the damage: the explicit one if given, otherwise the target's, otherwise 1.
+Never below 1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TargetLevel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetStats_" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetStats" data-uid="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats">
+  TargetStats
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/ReductionFunctions/ReductionContext.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reader for the target's stats, or <code>null</code> when there is no target entity. Always the target entity
+itself: unlike the attacker's, there is no fallback chain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IStatReader TargetStats { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">IStatReader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

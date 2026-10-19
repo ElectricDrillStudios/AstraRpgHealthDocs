@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class LogDefensePenetrationFnSO | Astra Health ">
       
-      <meta name="description" content="Applies a logarithmic divisive reduction to defense to provide diminishing returns as piercing increases. Create instances via Assets -&amp;gt; Create -&amp;gt; Astra Health / Def Penetration Functions / Log Def Penetration.">
+      <meta name="description" content="Applies a logarithmic divisive reduction to defense to provide diminishing returns as piercing increases. Create instances via Assets -&amp;gt; Create -&amp;gt; Astra Health / Def Penetration Functions / Log Def Penetration (Legacy).">
       <link rel="icon" href="../images/astra-health-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_LogDefensePenetrationFnSO" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.LogDefensePenetrationFnSO" class="text-break">
-Class LogDefensePenetrationFnSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/LogDefensePenetrationFnSO.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class LogDefensePenetrationFnSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/LogDefensePenetrationFnSO.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Class LogDefensePenetrationFnSO  <a class="header-action link-secondary" title="
   </div>
 
   <div class="markdown summary"><p>Applies a logarithmic divisive reduction to defense to provide diminishing returns as piercing increases.
-Create instances via Assets -&gt; Create -&gt; Astra Health / Def Penetration Functions / Log Def Penetration.</p>
+Create instances via Assets -&gt; Create -&gt; Astra Health / Def Penetration Functions / Log Def Penetration (Legacy).</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -133,6 +133,9 @@ Create instances via Assets -&gt; Create -&gt; Astra Health / Def Penetration Fu
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.html#ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_">DefensePenetrationFnSO.CalculatePiercedDefense(long, long, StatSO, in ReductionContext, bool)</a>
+    </div>
+    <div>
       <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionFnSO.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionFnSO_Tags">ReductionFnSO.Tags</a>
     </div>
   </dd></dl>
@@ -140,6 +143,11 @@ Create instances via Assets -&gt; Create -&gt; Astra Health / Def Penetration Fu
 
 
 
+  <h2 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_LogDefensePenetrationFnSO_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Legacy: kept so existing assets keep working; prefer <a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.html">HyperbolicDefensePenetrationFnSO</a> for new
+work. For small piercing values it behaves like the hyperbolic function with <code>K = BaseValue / ScaleFactor</code>;
+at high values it grows far more slowly.</p>
+</div>
 
 
   <h2 class="section" id="methods">Methods
@@ -150,7 +158,7 @@ Create instances via Assets -&gt; Create -&gt; Astra Health / Def Penetration Fu
 
   <h3 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_LogDefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Boolean_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.LogDefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Boolean)">
   CalculatePiercedDefense(long, long, StatSO, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/LogDefensePenetrationFnSO.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/LogDefensePenetrationFnSO.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reduces defense using a logarithmic divisive formula that provides diminishing returns.

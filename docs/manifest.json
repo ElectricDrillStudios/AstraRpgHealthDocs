@@ -995,6 +995,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraHealth.DamageMitigationFunctions.LogDamageMitigationFnSO.yml",
       "output": {
         ".html": {
@@ -1039,6 +1049,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.FlatDefensePenetrationFnSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.html"
         }
       },
       "version": ""
@@ -1815,6 +1835,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionFnSO.yml",
       "output": {
         ".html": {
@@ -2388,6 +2418,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/AstraRPG/workflows/damage/damage-type/damage-reduction-functions-hyperbolic.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/AstraRPG/workflows/damage/damage-type/damage-reduction-functions-hyperbolic.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/AstraRPG/workflows/damage/damage-type/damage-reduction-functions-log.png",
       "output": {
         "resource": {
@@ -2448,6 +2488,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-hyperbolic.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-hyperbolic.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-log.png",
       "output": {
         "resource": {
@@ -2462,6 +2512,16 @@
       "output": {
         "resource": {
           "relative_path": "images/AstraRPG/workflows/damage/damage-type/defense-reduction-functions-percentage.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/AstraRPG/workflows/damage/damage-type/hyperbolic-dmg-red-graph-visualizer.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/AstraRPG/workflows/damage/damage-type/hyperbolic-dmg-red-graph-visualizer.png"
         }
       },
       "version": ""

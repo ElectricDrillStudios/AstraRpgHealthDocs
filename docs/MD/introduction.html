@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/main/DocFx/MD/introduction.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/1.1.0/DocFx/MD/introduction.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -188,19 +188,21 @@ Both for the defensive and piercing stat, you can select a <code>DamageMitigatio
 <h3 id="-damage-source"><img src="../images/AstraRPG/astra-health_damage-source.png" alt="attribute" width="30" class="icon-background"> Damage Source</h3>
 <p><code>DamageSource</code>, derived from <code>ScriptableObject</code>, represents the origin of the damage inflicted. They don't have any specific properties, but they can be assigned to other objects of the package to create specific behaviors based on the damage source. We will see for what and how in the Workflows.</p>
 <h3 id="---damage-mitigation-functions"><img src="../images/AstraRPG/astra-health_flat-dmg-red-fo.png" alt="attribute" width="30" class="icon-background"> <img src="../images/AstraRPG/astra-health_percentage-dmg-red-fo.png" alt="attribute" width="30" class="icon-background"> <img src="../images/AstraRPG/astra-health_log-dmg-red-fo.png" alt="attribute" width="30" class="icon-background"> Damage Mitigation Functions</h3>
-<p>The package comes with three built-in <code>DamageMitigationFunction</code>s that you can use to define how defensive stats reduce incoming damage:</p>
+<p>The package comes with four built-in <code>DamageMitigationFunction</code>s that you can use to define how defensive stats reduce incoming damage:</p>
 <ul>
 <li><img src="../images/AstraRPG/astra-health_flat-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"><code>FlatDamageMitigationFn</code>: Reduces damage by a flat amount based on the defense stat value.</li>
 <li><img src="../images/AstraRPG/astra-health_percentage-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"><code>PercentageDamageMitigationFn</code>: Reduces damage by a percentage based on the defense stat value.</li>
-<li><img src="../images/AstraRPG/astra-health_log-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"><code>LogarithmicDamageMitigationFn</code>: Reduces damage using a logarithmic scale based on the defense stat value.</li>
+<li><code>HyperbolicDamageMitigationFn</code> <em>(🏷️ 1.1.0+)</em>: Reduces damage by the share <code>X / (X + K)</code> of the defense stat value <code>X</code>, the formula of games like League of Legends and World of Warcraft. Recommended for new projects.</li>
+<li><img src="../images/AstraRPG/astra-health_log-dmg-red-fo.png" alt="attribute" width="23" class="icon-background"><code>LogarithmicDamageMitigationFn</code> <em>(Legacy)</em>: Reduces damage using a logarithmic scale based on the defense stat value. Kept for backward compatibility.</li>
 </ul>
 <p>In case of need, custom damage mitigation functions can be created by extending the <code>DamageMitigationFn</code> class.</p>
 <h3 id="---defense-penetration-functions"><img src="../images/AstraRPG/astra-health_flat-def-red-fo.png" alt="attribute" width="30" class="icon-background"> <img src="../images/AstraRPG/astra-health_percentage-def-red-fo.png" alt="attribute" width="30" class="icon-background"> <img src="../images/AstraRPG/astra-health_log-def-red-fo.png" alt="attribute" width="30" class="icon-background"> Defense Penetration Functions</h3>
-<p>As for damage mitigation functions, the package comes with three built-in <code>DefensePenetrationFunction</code>s that you can use to define how piercing stats ignore a portion of the defense stat:</p>
+<p>As for damage mitigation functions, the package comes with four built-in <code>DefensePenetrationFunction</code>s that you can use to define how piercing stats ignore a portion of the defense stat:</p>
 <ul>
 <li><img src="../images/AstraRPG/astra-health_flat-def-red-fo.png" alt="attribute" width="23" class="icon-background"><code>FlatDefensePenetrationFn</code>: Ignores a flat amount of the defense stat based on the piercing stat value.</li>
 <li><img src="../images/AstraRPG/astra-health_percentage-def-red-fo.png" alt="attribute" width="23" class="icon-background"><code>PercentageDefensePenetrationFn</code>: Ignores a percentage of the defense stat based on the piercing stat value.</li>
-<li><img src="../images/AstraRPG/astra-health_log-def-red-fo.png" alt="attribute" width="23" class="icon-background"><code>LogarithmicDefensePenetrationFn</code>: Ignores a portion of the defense stat using a logarithmic scale based on the piercing stat value.</li>
+<li><code>HyperbolicDefensePenetrationFn</code> <em>(🏷️ 1.1.0+)</em>: Ignores the share <code>P / (P + K)</code> of the defense stat, where <code>P</code> is the piercing stat value. Recommended for new projects.</li>
+<li><img src="../images/AstraRPG/astra-health_log-def-red-fo.png" alt="attribute" width="23" class="icon-background"><code>LogarithmicDefensePenetrationFn</code> <em>(Legacy)</em>: Ignores a portion of the defense stat using a logarithmic scale based on the piercing stat value. Kept for backward compatibility.</li>
 </ul>
 <p>Also in this case, custom defense penetration functions can be created by extending the <code>DefensePenetrationFn</code> class.</p>
 <h3 id="-heal-source"><img src="../images/AstraRPG/astra-health_heal-source.png" alt="attribute" width="30" class="icon-background"> Heal Source</h3>

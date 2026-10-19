@@ -105,8 +105,17 @@ Implementations compute how an incoming damage amount is reduced using a defensi
       <dd></dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html">HyperbolicDamageMitigationFnSO</a></dt>
+      <dd><p>Mitigates damage by <code>X / (X + K)</code>, where <code>X</code> is the defensive stat and <code>K</code> the defense
+that gives 50% mitigation. The formula of LoL, Dota, WoW and Diablo.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.LogDamageMitigationFnSO.html">LogDamageMitigationFnSO</a></dt>
-      <dd></dd>
+      <dd><p>Legacy logarithmic mitigation. Kept so existing assets keep working; prefer
+<a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html">HyperbolicDamageMitigationFnSO</a> for new work. For small defense values it behaves like
+the hyperbolic function with <code>K = BaseValue / ScaleFactor</code>; at high values it grows far more slowly.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.PercentageDamageMitigationFnSO.html">PercentageDamageMitigationFnSO</a></dt>

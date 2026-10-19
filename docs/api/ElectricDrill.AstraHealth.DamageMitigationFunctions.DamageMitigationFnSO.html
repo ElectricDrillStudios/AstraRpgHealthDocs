@@ -131,6 +131,7 @@ Implementations compute how an incoming damage amount is reduced using a defensi
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.FlatDamageMitigationFnSO.html">FlatDamageMitigationFnSO</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html">HyperbolicDamageMitigationFnSO</a></div>
       <div><a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.LogDamageMitigationFnSO.html">LogDamageMitigationFnSO</a></div>
       <div><a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.PercentageDamageMitigationFnSO.html">PercentageDamageMitigationFnSO</a></div>
     </dd>
@@ -197,6 +198,60 @@ ensure the returned value is &gt;= 0 and apply <code class="paramref">roundingMo
 
 
 
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_CalculateMitigatedDamage_" data-uid="ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__" data-uid="ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@)">
+  CalculateMitigatedDamage(long, double, RoundingMode, in ReductionContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DamageMitigationFunctions/DamageMitigationFnSO.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Same as <a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.html#ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_">CalculateMitigatedDamage(long, double, RoundingMode)</a>, for functions that also
+depend on the entities involved (a constant that grows with the attacker's level, another stat of the target).
+The damage pipeline always calls this overload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long CalculateMitigatedDamage(long amount, double defensiveStatValue, RoundingMode roundingMode, in ReductionContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <span class="xref">long</span></dt>
+    <dd><p>The original incoming damage amount to be reduced.</p>
+</dd>
+    <dt><code>defensiveStatValue</code> <span class="xref">double</span></dt>
+    <dd><p>The value of the defensive statistic used to reduce damage.</p>
+</dd>
+    <dt><code>roundingMode</code> <span class="xref">RoundingMode</span></dt>
+    <dd><p>Rounding mode applied to fractional results.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html">ReductionContext</a></dt>
+    <dd><p>The entities involved in the hit: their levels and stats. Valid only during the call.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd><p>The reduced damage amount as a non-negative <span class="xref">long</span>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The default implementation ignores <code class="paramref">context</code> and forwards to the abstract overload,
+so existing implementations keep working unchanged. Override it to use the context.</p>
+</div>
 
 
 

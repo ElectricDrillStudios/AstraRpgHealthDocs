@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HyperbolicDefensePenetrationFnSO | Astra Health </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HyperbolicDefensePenetrationFnSO | Astra Health ">
+      
+      <meta name="description" content="Pierces P / (P + K) of the target&#39;s defense, where P is the piercing stat and K the piercing that removes half of it. The penetration counterpart of .">
+      <link rel="icon" href="../images/astra-health-ico.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRPGHealth/new/main/apiSpec/new?filename=ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-health.svg" alt="Astra Health">
+            Astra Health
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO">
+
+
+
+  <h1 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO" class="text-break">
+Class HyperbolicDefensePenetrationFnSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/HyperbolicDefensePenetrationFnSO.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraHealth.html">AstraHealth</a>.<a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.html">DefensePenetrationFunctions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>com.electricdrill.astra-health.Runtime.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Pierces <code>P / (P + K)</code> of the target's defense, where <code>P</code> is the piercing stat and <code>K</code>
+the piercing that removes half of it. The penetration counterpart of
+<a class="xref" href="ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html">HyperbolicDamageMitigationFnSO</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class HyperbolicDefensePenetrationFnSO : DefensePenetrationFnSO, ITaggable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionFnSO.html">ReductionFnSO</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.html">DefensePenetrationFnSO</a></div>
+      <div><span class="xref">HyperbolicDefensePenetrationFnSO</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">ITaggable</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionFnSO.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionFnSO_Tags">ReductionFnSO.Tags</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p><code>K</code> is <code>BaseValue + PerLevel × level</code>, like on the mitigation function, with its own values.
+Create instances via Assets -&gt; Create -&gt; Astra Health / Def Penetration Functions / Hyperbolic Def Penetration.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)">
+  CalculatePiercedDefense(long, long, StatSO, in ReductionContext, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/HyperbolicDefensePenetrationFnSO.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reduces defense with <code>Defense × K / (P + K)</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override double CalculatePiercedDefense(long piercingStatValue, long defensiveStatValue, StatSO defensiveStat, in ReductionContext context, bool applyClamp = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>piercingStatValue</code> <span class="xref">long</span></dt>
+    <dd><p>The attacker's piercing stat value <code>P</code>.</p>
+</dd>
+    <dt><code>defensiveStatValue</code> <span class="xref">long</span></dt>
+    <dd><p>The defender's original defense stat value.</p>
+</dd>
+    <dt><code>defensiveStat</code> <span class="xref">StatSO</span></dt>
+    <dd><p>The defensive stat used to clamp the result. No clamp is applied when it is null.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html">ReductionContext</a></dt>
+    <dd><p>Levels used to evaluate <code>K</code>.</p>
+</dd>
+    <dt><code>applyClamp</code> <span class="xref">bool</span></dt>
+    <dd><p>Whether to clamp the result to the stat's bounds.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">double</span></dt>
+    <dd><p>The reduced defense value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If <code class="paramref">piercingStatValue</code> is zero or negative the defense is returned unchanged.</p>
+</div>
+
+
+
+
+  <a id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense*"></a>
+
+  <h3 id="ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Boolean_" data-uid="ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Boolean)">
+  CalculatePiercedDefense(long, long, StatSO, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRPGHealth/blob/main/Runtime/DefensePenetrationFunctions/HyperbolicDefensePenetrationFnSO.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reduces defense with <code>Defense × K / (P + K)</code>, evaluating <code>K</code> at level 1 because no
+entity is known. The gameplay path uses the overload with a <a class="xref" href="ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html">ReductionContext</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override double CalculatePiercedDefense(long piercingStatValue, long defensiveStatValue, StatSO defensiveStat, bool applyClamp = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>piercingStatValue</code> <span class="xref">long</span></dt>
+    <dd></dd>
+    <dt><code>defensiveStatValue</code> <span class="xref">long</span></dt>
+    <dd></dd>
+    <dt><code>defensiveStat</code> <span class="xref">StatSO</span></dt>
+    <dd></dd>
+    <dt><code>applyClamp</code> <span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">double</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

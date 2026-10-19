@@ -2838,6 +2838,15 @@ references:
   fullName.vb: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.ApplyDamageMitigation(Long, Double, ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO, ElectricDrill.AstraRpgFramework.Utils.RoundingMode)
   nameWithType: DamageMitigationCalculator.ApplyDamageMitigation(long, double, DamageMitigationFnSO, RoundingMode)
   nameWithType.vb: DamageMitigationCalculator.ApplyDamageMitigation(Long, Double, DamageMitigationFnSO, RoundingMode)
+- uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.ApplyDamageMitigation(System.Int64,System.Double,ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO,ElectricDrill.AstraRpgFramework.Utils.RoundingMode,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@)
+  name: ApplyDamageMitigation(long, double, DamageMitigationFnSO, RoundingMode, in ReductionContext)
+  href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_ApplyDamageMitigation_System_Int64_System_Double_ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__
+  commentId: M:ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.ApplyDamageMitigation(System.Int64,System.Double,ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO,ElectricDrill.AstraRpgFramework.Utils.RoundingMode,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@)
+  name.vb: ApplyDamageMitigation(Long, Double, DamageMitigationFnSO, RoundingMode, ReductionContext)
+  fullName: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.ApplyDamageMitigation(long, double, ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO, ElectricDrill.AstraRpgFramework.Utils.RoundingMode, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext)
+  fullName.vb: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.ApplyDamageMitigation(Long, Double, ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO, ElectricDrill.AstraRpgFramework.Utils.RoundingMode, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext)
+  nameWithType: DamageMitigationCalculator.ApplyDamageMitigation(long, double, DamageMitigationFnSO, RoundingMode, in ReductionContext)
+  nameWithType.vb: DamageMitigationCalculator.ApplyDamageMitigation(Long, Double, DamageMitigationFnSO, RoundingMode, ReductionContext)
 - uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.ApplyDamageMitigation*
   name: ApplyDamageMitigation
   href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_ApplyDamageMitigation_
@@ -2845,6 +2854,15 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.ApplyDamageMitigation
   nameWithType: DamageMitigationCalculator.ApplyDamageMitigation
+- uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name: CalculatePiercedDefense(long, long, DefensePenetrationFnSO, StatSO, in ReductionContext, bool)
+  href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name.vb: CalculatePiercedDefense(Long, Long, DefensePenetrationFnSO, StatSO, ReductionContext, Boolean)
+  fullName: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculatePiercedDefense(long, long, ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO, ElectricDrill.AstraRpgFramework.Stats.StatSO, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, bool)
+  fullName.vb: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculatePiercedDefense(Long, Long, ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO, ElectricDrill.AstraRpgFramework.Stats.StatSO, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, Boolean)
+  nameWithType: DamageMitigationCalculator.CalculatePiercedDefense(long, long, DefensePenetrationFnSO, StatSO, in ReductionContext, bool)
+  nameWithType.vb: DamageMitigationCalculator.CalculatePiercedDefense(Long, Long, DefensePenetrationFnSO, StatSO, ReductionContext, Boolean)
 - uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO,ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Boolean)
   name: CalculatePiercedDefense(long, long, DefensePenetrationFnSO, StatSO, bool)
   href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Boolean_
@@ -2861,6 +2879,15 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculatePiercedDefense
   nameWithType: DamageMitigationCalculator.CalculatePiercedDefense
+- uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(System.Int64,System.Int64,ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO,ElectricDrill.AstraHealth.Config.HealthRoundingSettings,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name: CalculateReducedDmg(long, long, DefensePenetrationFnSO, long, StatSO, DamageMitigationFnSO, HealthRoundingSettings, in ReductionContext, bool)
+  href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_CalculateReducedDmg_System_Int64_System_Int64_ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_ElectricDrill_AstraHealth_Config_HealthRoundingSettings_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(System.Int64,System.Int64,ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO,ElectricDrill.AstraHealth.Config.HealthRoundingSettings,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name.vb: CalculateReducedDmg(Long, Long, DefensePenetrationFnSO, Long, StatSO, DamageMitigationFnSO, HealthRoundingSettings, ReductionContext, Boolean)
+  fullName: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(long, long, ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO, long, ElectricDrill.AstraRpgFramework.Stats.StatSO, ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO, ElectricDrill.AstraHealth.Config.HealthRoundingSettings, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, bool)
+  fullName.vb: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(Long, Long, ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO, Long, ElectricDrill.AstraRpgFramework.Stats.StatSO, ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO, ElectricDrill.AstraHealth.Config.HealthRoundingSettings, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, Boolean)
+  nameWithType: DamageMitigationCalculator.CalculateReducedDmg(long, long, DefensePenetrationFnSO, long, StatSO, DamageMitigationFnSO, HealthRoundingSettings, in ReductionContext, bool)
+  nameWithType.vb: DamageMitigationCalculator.CalculateReducedDmg(Long, Long, DefensePenetrationFnSO, Long, StatSO, DamageMitigationFnSO, HealthRoundingSettings, ReductionContext, Boolean)
 - uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(System.Int64,System.Int64,ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO,ElectricDrill.AstraHealth.Config.HealthRoundingSettings,System.Boolean)
   name: CalculateReducedDmg(long, long, DefensePenetrationFnSO, long, StatSO, DamageMitigationFnSO, HealthRoundingSettings, bool)
   href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_CalculateReducedDmg_System_Int64_System_Int64_ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_ElectricDrill_AstraHealth_Config_HealthRoundingSettings_System_Boolean_
@@ -2870,6 +2897,15 @@ references:
   fullName.vb: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(Long, Long, ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO, Long, ElectricDrill.AstraRpgFramework.Stats.StatSO, ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO, ElectricDrill.AstraHealth.Config.HealthRoundingSettings, Boolean)
   nameWithType: DamageMitigationCalculator.CalculateReducedDmg(long, long, DefensePenetrationFnSO, long, StatSO, DamageMitigationFnSO, HealthRoundingSettings, bool)
   nameWithType.vb: DamageMitigationCalculator.CalculateReducedDmg(Long, Long, DefensePenetrationFnSO, Long, StatSO, DamageMitigationFnSO, HealthRoundingSettings, Boolean)
+- uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(System.Int64,System.Int64,System.Int64,ElectricDrill.AstraHealth.Damage.DamageTypeSO,ElectricDrill.AstraHealth.Config.HealthRoundingSettings,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name: CalculateReducedDmg(long, long, long, DamageTypeSO, HealthRoundingSettings, in ReductionContext, bool)
+  href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_CalculateReducedDmg_System_Int64_System_Int64_System_Int64_ElectricDrill_AstraHealth_Damage_DamageTypeSO_ElectricDrill_AstraHealth_Config_HealthRoundingSettings_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(System.Int64,System.Int64,System.Int64,ElectricDrill.AstraHealth.Damage.DamageTypeSO,ElectricDrill.AstraHealth.Config.HealthRoundingSettings,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name.vb: CalculateReducedDmg(Long, Long, Long, DamageTypeSO, HealthRoundingSettings, ReductionContext, Boolean)
+  fullName: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(long, long, long, ElectricDrill.AstraHealth.Damage.DamageTypeSO, ElectricDrill.AstraHealth.Config.HealthRoundingSettings, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, bool)
+  fullName.vb: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(Long, Long, Long, ElectricDrill.AstraHealth.Damage.DamageTypeSO, ElectricDrill.AstraHealth.Config.HealthRoundingSettings, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, Boolean)
+  nameWithType: DamageMitigationCalculator.CalculateReducedDmg(long, long, long, DamageTypeSO, HealthRoundingSettings, in ReductionContext, bool)
+  nameWithType.vb: DamageMitigationCalculator.CalculateReducedDmg(Long, Long, Long, DamageTypeSO, HealthRoundingSettings, ReductionContext, Boolean)
 - uid: ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.CalculateReducedDmg(System.Int64,System.Int64,System.Int64,ElectricDrill.AstraHealth.Damage.DamageTypeSO,ElectricDrill.AstraHealth.Config.HealthRoundingSettings,System.Boolean)
   name: CalculateReducedDmg(long, long, long, DamageTypeSO, HealthRoundingSettings, bool)
   href: api/ElectricDrill.AstraHealth.Damage.CalculationPipeline.DamageMitigationCalculator.html#ElectricDrill_AstraHealth_Damage_CalculationPipeline_DamageMitigationCalculator_CalculateReducedDmg_System_Int64_System_Int64_System_Int64_ElectricDrill_AstraHealth_Damage_DamageTypeSO_ElectricDrill_AstraHealth_Config_HealthRoundingSettings_System_Boolean_
@@ -4212,6 +4248,15 @@ references:
   fullName.vb: ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, ElectricDrill.AstraRpgFramework.Utils.RoundingMode)
   nameWithType: DamageMitigationFnSO.CalculateMitigatedDamage(long, double, RoundingMode)
   nameWithType.vb: DamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, RoundingMode)
+- uid: ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@)
+  name: CalculateMitigatedDamage(long, double, RoundingMode, in ReductionContext)
+  href: api/ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.html#ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__
+  commentId: M:ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@)
+  name.vb: CalculateMitigatedDamage(Long, Double, RoundingMode, ReductionContext)
+  fullName: ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage(long, double, ElectricDrill.AstraRpgFramework.Utils.RoundingMode, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext)
+  fullName.vb: ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, ElectricDrill.AstraRpgFramework.Utils.RoundingMode, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext)
+  nameWithType: DamageMitigationFnSO.CalculateMitigatedDamage(long, double, RoundingMode, in ReductionContext)
+  nameWithType.vb: DamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, RoundingMode, ReductionContext)
 - uid: ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.CalculateMitigatedDamage*
   name: CalculateMitigatedDamage
   href: api/ElectricDrill.AstraHealth.DamageMitigationFunctions.DamageMitigationFnSO.html#ElectricDrill_AstraHealth_DamageMitigationFunctions_DamageMitigationFnSO_CalculateMitigatedDamage_
@@ -4241,6 +4286,37 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.DamageMitigationFunctions.FlatDamageMitigationFnSO.CalculateMitigatedDamage
   nameWithType: FlatDamageMitigationFnSO.CalculateMitigatedDamage
+- uid: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO
+  name: HyperbolicDamageMitigationFnSO
+  href: api/ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html
+  commentId: T:ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO
+  fullName: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO
+  nameWithType: HyperbolicDamageMitigationFnSO
+- uid: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode)
+  name: CalculateMitigatedDamage(long, double, RoundingMode)
+  href: api/ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html#ElectricDrill_AstraHealth_DamageMitigationFunctions_HyperbolicDamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_
+  commentId: M:ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode)
+  name.vb: CalculateMitigatedDamage(Long, Double, RoundingMode)
+  fullName: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(long, double, ElectricDrill.AstraRpgFramework.Utils.RoundingMode)
+  fullName.vb: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, ElectricDrill.AstraRpgFramework.Utils.RoundingMode)
+  nameWithType: HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(long, double, RoundingMode)
+  nameWithType.vb: HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, RoundingMode)
+- uid: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@)
+  name: CalculateMitigatedDamage(long, double, RoundingMode, in ReductionContext)
+  href: api/ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html#ElectricDrill_AstraHealth_DamageMitigationFunctions_HyperbolicDamageMitigationFnSO_CalculateMitigatedDamage_System_Int64_System_Double_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__
+  commentId: M:ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(System.Int64,System.Double,ElectricDrill.AstraRpgFramework.Utils.RoundingMode,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@)
+  name.vb: CalculateMitigatedDamage(Long, Double, RoundingMode, ReductionContext)
+  fullName: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(long, double, ElectricDrill.AstraRpgFramework.Utils.RoundingMode, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext)
+  fullName.vb: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, ElectricDrill.AstraRpgFramework.Utils.RoundingMode, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext)
+  nameWithType: HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(long, double, RoundingMode, in ReductionContext)
+  nameWithType.vb: HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage(Long, Double, RoundingMode, ReductionContext)
+- uid: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage*
+  name: CalculateMitigatedDamage
+  href: api/ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.html#ElectricDrill_AstraHealth_DamageMitigationFunctions_HyperbolicDamageMitigationFnSO_CalculateMitigatedDamage_
+  commentId: Overload:ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.DamageMitigationFunctions.HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage
+  nameWithType: HyperbolicDamageMitigationFnSO.CalculateMitigatedDamage
 - uid: ElectricDrill.AstraHealth.DamageMitigationFunctions.LogDamageMitigationFnSO
   name: LogDamageMitigationFnSO
   href: api/ElectricDrill.AstraHealth.DamageMitigationFunctions.LogDamageMitigationFnSO.html
@@ -4297,6 +4373,15 @@ references:
   commentId: T:ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO
   fullName: ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO
   nameWithType: DefensePenetrationFnSO
+- uid: ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name: CalculatePiercedDefense(long, long, StatSO, in ReductionContext, bool)
+  href: api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.html#ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name.vb: CalculatePiercedDefense(Long, Long, StatSO, ReductionContext, Boolean)
+  fullName: ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense(long, long, ElectricDrill.AstraRpgFramework.Stats.StatSO, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, bool)
+  fullName.vb: ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense(Long, Long, ElectricDrill.AstraRpgFramework.Stats.StatSO, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, Boolean)
+  nameWithType: DefensePenetrationFnSO.CalculatePiercedDefense(long, long, StatSO, in ReductionContext, bool)
+  nameWithType.vb: DefensePenetrationFnSO.CalculatePiercedDefense(Long, Long, StatSO, ReductionContext, Boolean)
 - uid: ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Boolean)
   name: CalculatePiercedDefense(long, long, StatSO, bool)
   href: api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.DefensePenetrationFnSO.html#ElectricDrill_AstraHealth_DefensePenetrationFunctions_DefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Boolean_
@@ -4335,6 +4420,37 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraHealth.DefensePenetrationFunctions.FlatDefensePenetrationFnSO.CalculatePiercedDefense
   nameWithType: FlatDefensePenetrationFnSO.CalculatePiercedDefense
+- uid: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO
+  name: HyperbolicDefensePenetrationFnSO
+  href: api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.html
+  commentId: T:ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO
+  fullName: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO
+  nameWithType: HyperbolicDefensePenetrationFnSO
+- uid: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name: CalculatePiercedDefense(long, long, StatSO, in ReductionContext, bool)
+  href: api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.html#ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext@,System.Boolean)
+  name.vb: CalculatePiercedDefense(Long, Long, StatSO, ReductionContext, Boolean)
+  fullName: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(long, long, ElectricDrill.AstraRpgFramework.Stats.StatSO, in ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, bool)
+  fullName.vb: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(Long, Long, ElectricDrill.AstraRpgFramework.Stats.StatSO, ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext, Boolean)
+  nameWithType: HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(long, long, StatSO, in ReductionContext, bool)
+  nameWithType.vb: HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(Long, Long, StatSO, ReductionContext, Boolean)
+- uid: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Boolean)
+  name: CalculatePiercedDefense(long, long, StatSO, bool)
+  href: api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.html#ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_System_Int64_System_Int64_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Boolean_
+  commentId: M:ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(System.Int64,System.Int64,ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Boolean)
+  name.vb: CalculatePiercedDefense(Long, Long, StatSO, Boolean)
+  fullName: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(long, long, ElectricDrill.AstraRpgFramework.Stats.StatSO, bool)
+  fullName.vb: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(Long, Long, ElectricDrill.AstraRpgFramework.Stats.StatSO, Boolean)
+  nameWithType: HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(long, long, StatSO, bool)
+  nameWithType.vb: HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense(Long, Long, StatSO, Boolean)
+- uid: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense*
+  name: CalculatePiercedDefense
+  href: api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.html#ElectricDrill_AstraHealth_DefensePenetrationFunctions_HyperbolicDefensePenetrationFnSO_CalculatePiercedDefense_
+  commentId: Overload:ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.DefensePenetrationFunctions.HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense
+  nameWithType: HyperbolicDefensePenetrationFnSO.CalculatePiercedDefense
 - uid: ElectricDrill.AstraHealth.DefensePenetrationFunctions.LogDefensePenetrationFnSO
   name: LogDefensePenetrationFnSO
   href: api/ElectricDrill.AstraHealth.DefensePenetrationFunctions.LogDefensePenetrationFnSO.html
@@ -6700,6 +6816,137 @@ references:
   commentId: N:ElectricDrill.AstraHealth.ReductionFunctions
   fullName: ElectricDrill.AstraHealth.ReductionFunctions
   nameWithType: ElectricDrill.AstraHealth.ReductionFunctions
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext
+  name: ReductionContext
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html
+  commentId: T:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext
+  nameWithType: ReductionContext
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.Stats.IStatReader,System.Int32,System.Int32)
+  name: ReductionContext(EntityCore, EntityCore, IStatReader, int, int)
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_Stats_IStatReader_System_Int32_System_Int32_
+  commentId: M:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.Stats.IStatReader,System.Int32,System.Int32)
+  name.vb: New(EntityCore, EntityCore, IStatReader, Integer, Integer)
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.ReductionContext(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.Stats.IStatReader, int, int)
+  fullName.vb: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.New(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.Stats.IStatReader, Integer, Integer)
+  nameWithType: ReductionContext.ReductionContext(EntityCore, EntityCore, IStatReader, int, int)
+  nameWithType.vb: ReductionContext.New(EntityCore, EntityCore, IStatReader, Integer, Integer)
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor(System.Int32,System.Int32)
+  name: ReductionContext(int, int)
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_System_Int32_System_Int32_
+  commentId: M:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor(System.Int32,System.Int32)
+  name.vb: New(Integer, Integer)
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.ReductionContext(int, int)
+  fullName.vb: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.New(Integer, Integer)
+  nameWithType: ReductionContext.ReductionContext(int, int)
+  nameWithType.vb: ReductionContext.New(Integer, Integer)
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor*
+  name: ReductionContext
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext__ctor_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.ReductionContext
+  fullName.vb: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.New
+  nameWithType: ReductionContext.ReductionContext
+  nameWithType.vb: ReductionContext.New
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Default
+  name: Default
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Default
+  commentId: F:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Default
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Default
+  nameWithType: ReductionContext.Default
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer
+  name: HasPerformer
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_HasPerformer
+  commentId: P:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer
+  nameWithType: ReductionContext.HasPerformer
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer*
+  name: HasPerformer
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_HasPerformer_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.HasPerformer
+  nameWithType: ReductionContext.HasPerformer
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer
+  name: Performer
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Performer
+  commentId: P:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer
+  nameWithType: ReductionContext.Performer
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer*
+  name: Performer
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Performer_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Performer
+  nameWithType: ReductionContext.Performer
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel
+  name: PerformerLevel
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerLevel
+  commentId: P:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel
+  nameWithType: ReductionContext.PerformerLevel
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel*
+  name: PerformerLevel
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerLevel_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerLevel
+  nameWithType: ReductionContext.PerformerLevel
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats
+  name: PerformerStats
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerStats
+  commentId: P:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats
+  nameWithType: ReductionContext.PerformerStats
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats*
+  name: PerformerStats
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_PerformerStats_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.PerformerStats
+  nameWithType: ReductionContext.PerformerStats
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target
+  name: Target
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Target
+  commentId: P:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target
+  nameWithType: ReductionContext.Target
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target*
+  name: Target
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_Target_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.Target
+  nameWithType: ReductionContext.Target
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel
+  name: TargetLevel
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetLevel
+  commentId: P:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel
+  nameWithType: ReductionContext.TargetLevel
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel*
+  name: TargetLevel
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetLevel_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetLevel
+  nameWithType: ReductionContext.TargetLevel
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats
+  name: TargetStats
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetStats
+  commentId: P:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats
+  nameWithType: ReductionContext.TargetStats
+- uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats*
+  name: TargetStats
+  href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.html#ElectricDrill_AstraHealth_ReductionFunctions_ReductionContext_TargetStats_
+  commentId: Overload:ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats
+  isSpec: "True"
+  fullName: ElectricDrill.AstraHealth.ReductionFunctions.ReductionContext.TargetStats
+  nameWithType: ReductionContext.TargetStats
 - uid: ElectricDrill.AstraHealth.ReductionFunctions.ReductionFnSO
   name: ReductionFnSO
   href: api/ElectricDrill.AstraHealth.ReductionFunctions.ReductionFnSO.html

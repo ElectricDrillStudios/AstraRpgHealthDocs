@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/main/DocFx/MD/changelog.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgHealthDocs/blob/1.1.0/DocFx/MD/changelog.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,14 +89,33 @@
 
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
-<h2 id="101---2026-09-25">[1.0.1] - 2026-09-25</h2>
+<h2 id="110---2026-10-07">[1.1.0] - 2026-10-07</h2>
+<h3 id="added">Added</h3>
+<h4 id="runtime-features">Runtime Features</h4>
+<ul>
+<li>Added <strong>hyperbolic damage mitigation and defense penetration</strong> (<code>HyperbolicDamageMitigationFnSO</code> and <code>HyperbolicDefensePenetrationFnSO</code>), the <code>X / (X + K)</code> formula used by League of Legends, Dota, World of Warcraft and Diablo. Defense gives diminishing returns without ever granting immunity, and every <code>K</code> points of defense add the same number of survivable hits, which makes the stat easy to budget.</li>
+<li><code>K</code> is the defense that gives 50% mitigation. It is configured as <code>Base Value + Per Level × level</code>: a constant such as League of Legends' 100, or a level-dependent value such as World of Warcraft's <code>400 + 85 × level</code>. <em>Level Source</em> chooses whether the attacker's (default) or the target's level is used.</li>
+<li>Added <code>ReductionContext</code>, which lets custom damage mitigation and defense penetration functions depend on more than the stat value: it gives them the target, the performer, their stats and their levels. The performer is the entity the hit is attributed to, so with a <em>Damage Stats Attribution</em> other than <code>Direct</code> a level 1 weapon owned by a level 50 hero counts as level 50. Functions written for 1.0.0 keep working unchanged.</li>
+</ul>
+<h4 id="editor-features">Editor Features</h4>
+<ul>
+<li>Added <code>Hyperbolic Dmg Mitigation</code> and <code>Hyperbolic Def Penetration</code> to the <code>Assets &gt; Create &gt; Astra Health</code> menu, with League of Legends-like and World of Warcraft-like presets in their inspectors.</li>
+<li>Added the <strong>Hyperbolic Damage Mitigation Graph</strong> and <strong>Hyperbolic Defense Penetration Graph</strong> windows (<code>Tools &gt; Astra Health</code>). They plot the formula for a constant <code>K</code> or, for a level-dependent <code>K</code>, one curve per level up to a <em>Max Level</em> of your choice. The <em>Open Graph Visualizer</em> button in each hyperbolic asset opens the window already filled with its values.</li>
+<li>Added <strong>Attacker Level</strong> and <strong>Defender Level</strong> fields to the Damage Mitigation Graph, so level-dependent functions are drawn at the right level. Levels are read from the assigned entities when there are any.</li>
+</ul>
 <h3 id="changed">Changed</h3>
+<h4 id="editor-features-1">Editor Features</h4>
+<ul>
+<li>The <strong>logarithmic</strong> damage mitigation and defense penetration functions are now marked <strong>Legacy</strong>: a warning in their inspectors and &quot;(Legacy)&quot; in the create menu. Their behavior is unchanged and existing assets keep working. Use the hyperbolic functions for new work. The two families are not interchangeable (at high stat values the logarithmic curve grows far more slowly), so rebalance your stats rather than swapping the assets.</li>
+</ul>
+<h2 id="101---2026-09-25">[1.0.1] - 2026-09-25</h2>
+<h3 id="changed-1">Changed</h3>
 <h4 id="samples"><em>Samples</em></h4>
 <ul>
 <li>The Example scene is not depending on Astra Framework samples any more</li>
 </ul>
 <h2 id="100---2026-09-11">[1.0.0] - 2026-09-11</h2>
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 <ul>
 <li>Initial release of Astra Health.</li>
 </ul>
